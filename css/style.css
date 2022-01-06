@@ -1167,7 +1167,7 @@ textarea:focus {
 
 @media only screen and (max-width: 420px) {
     .box-headline {
-        font-size: 50px;
+        font-size: 40px;
     }
     .box-intro h5 {
         font-size: 12px;
