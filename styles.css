@@ -50,6 +50,10 @@ body {
     overflow: hidden;
     -webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
     transition: all 0.3s ease;
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
 }
 
 .experience-card::before {
@@ -77,36 +81,43 @@ body {
     position: absolute;
     pointer-events: none;
     z-index: 1000;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
+    border-radius: 0.75rem;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
     color: white;
     animation: floatAndDisperse 3s ease-out forwards;
     will-change: transform, opacity;
     text-shadow: 0 0 10px currentColor;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 0.02em;
 }
 
 .code-bubble .keyword {
     color: #FFD700; /* Bright yellow */
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    font-weight: 600;
 }
 
 .code-bubble .tech {
     color: #00FFFF; /* Cyan */
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    font-weight: 500;
 }
 
 .code-bubble .role {
     color: #FF6B6B; /* Bright red */
     text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    font-weight: 600;
 }
 
 .code-bubble .skill {
     color: #98FB98; /* Pale green */
     text-shadow: 0 0 10px rgba(152, 251, 152, 0.5);
+    font-weight: 500;
 }
 
 @keyframes floatAndDisperse {
@@ -116,6 +127,7 @@ body {
     }
     10% {
         opacity: 1;
+        transform: translate(0, 0) scale(1);
     }
     90% {
         opacity: 1;
@@ -154,15 +166,16 @@ body {
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 1rem;
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
     color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .color-reference.visible {
@@ -172,10 +185,12 @@ body {
 .color-reference-item {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-family: 'Fira Code', monospace;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
 }
 
 .color-reference-item:last-child {
@@ -186,7 +201,7 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 10px;
     animation: pulse 2s ease-in-out infinite;
 }
 
@@ -222,16 +237,16 @@ body {
     box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
 }
 
-/* Ensure touch targets are large enough on mobile */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     .experience-card {
         padding: 1.5rem;
     }
 
     .code-bubble {
-        font-size: 1.4rem;
-        padding: 0.6rem 1.2rem;
-        animation: floatAndDisperseMobile 4s ease-out forwards;
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.6rem;
     }
 
     .color-reference {
@@ -240,60 +255,27 @@ body {
         top: 1rem;
         bottom: auto;
         transform: none;
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(8px);
-        padding: 0.8rem 1.2rem;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        font-size: 0.85rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        font-size: 0.9rem;
     }
 
     .color-reference-item {
-        margin-bottom: 0;
-        white-space: nowrap;
-        color: rgba(255, 255, 255, 0.95);
-        font-weight: 500;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
     }
 
     .color-dot {
-        width: 8px;
-        height: 8px;
-        margin-right: 6px;
-    }
-
-    @keyframes floatAndDisperseMobile {
-        0% {
-            transform: translate(0, 0) scale(0.8);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translate(
-                calc(var(--random-x) * 50px),
-                calc(var(--random-y) * -250px)
-            ) 
-            scale(0.8);
-            opacity: 0;
-        }
+        width: 6px;
+        height: 6px;
+        margin-right: 8px;
     }
 }
 
 /* Splash Screen Styles */
 @keyframes logoReveal {
     0% {
-        transform: scale(0);
+        transform: scale(0.8);
         opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
     }
     100% {
         transform: scale(1);
@@ -304,7 +286,7 @@ body {
 @keyframes taglineFade {
     0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
     100% {
         opacity: 1;
@@ -321,45 +303,96 @@ body {
     }
 }
 
-@keyframes splashFadeOut {
+@keyframes splashToHeader {
+    0% {
+        height: 100vh;
+        background: linear-gradient(to right, #1e40af, #1e3a8a);
+    }
+    100% {
+        height: 4rem;
+        background: linear-gradient(to right, #1e40af, #1e3a8a);
+    }
+}
+
+@keyframes textToNav {
+    0% {
+        font-size: 4rem;
+        letter-spacing: -0.02em;
+        transform: translate(0, 0);
+    }
+    100% {
+        font-size: 1.5rem;
+        letter-spacing: 0;
+        transform: translate(-1rem, -1rem);
+    }
+}
+
+@keyframes fadeOutElements {
     0% {
         opacity: 1;
-        transform: scale(1);
     }
     100% {
         opacity: 0;
-        transform: scale(1.5);
     }
+}
+
+#splash-screen {
+    background: linear-gradient(to right, #1e40af, #1e3a8a);
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-out;
+}
+
+#splash-screen.transforming {
+    animation: splashToHeader 0.8s ease-out forwards;
 }
 
 .splash-text {
     animation: logoReveal 1.5s ease-out forwards;
     display: inline-block;
     position: relative;
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform-origin: left center;
+    text-align: center;
 }
 
-.splash-text::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #fff, transparent);
-    animation: loaderGrow 2s ease-in-out forwards;
+.splash-text.transforming {
+    animation: textToNav 0.8s ease-out forwards;
 }
 
 .splash-tagline {
-    animation: taglineFade 1s ease-out 1s forwards;
+    animation: taglineFade 0.8s ease-out 0.5s forwards;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    text-align: center;
+    opacity: 0;
+}
+
+.splash-tagline.transforming {
+    animation: fadeOutElements 0.5s ease-out forwards;
 }
 
 .loader-line {
     width: 200px;
-    height: 2px;
+    height: 1px;
     background: rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
     margin: 0 auto;
+}
+
+.loader-line.transforming {
+    animation: fadeOutElements 0.5s ease-out forwards;
 }
 
 .loader-line::after {
@@ -369,10 +402,22 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, transparent, #fff, transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
     animation: loaderGrow 2s ease-in-out forwards;
 }
 
-#splash-screen.fade-out {
-    animation: splashFadeOut 1s ease-out forwards;
+/* Ajuste del nav para la transición */
+nav {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+nav.visible {
+    opacity: 1;
+}
+
+/* Asegurar que el texto del nav esté en la misma posición */
+nav a.text-2xl {
+    position: relative;
+    z-index: 51;
 } 

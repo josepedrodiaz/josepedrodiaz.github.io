@@ -1,6 +1,10 @@
 // Splash Screen Control
 document.addEventListener('DOMContentLoaded', () => {
     const splashScreen = document.getElementById('splash-screen');
+    const splashText = document.querySelector('.splash-text');
+    const splashTagline = document.querySelector('.splash-tagline');
+    const loaderLine = document.querySelector('.loader-line');
+    const nav = document.querySelector('nav');
     const body = document.body;
 
     // Prevent scrolling while splash screen is visible
@@ -8,187 +12,197 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hide splash screen after animations complete
     setTimeout(() => {
-        splashScreen.classList.add('fade-out');
-        body.style.overflow = '';
+        // Start transformation
+        splashScreen.classList.add('transforming');
+        splashText.classList.add('transforming');
+        splashTagline.classList.add('transforming');
+        loaderLine.classList.add('transforming');
         
-        // Remove splash screen from DOM after fade out
+        // Show nav after a short delay
         setTimeout(() => {
-            splashScreen.remove();
-        }, 1000);
-    }, 3000);
+            nav.classList.add('visible');
+            body.style.overflow = '';
+            
+            // Remove splash screen elements after transition
+            setTimeout(() => {
+                splashTagline.remove();
+                loaderLine.remove();
+            }, 500);
+        }, 400);
+    }, 2000);
 });
 
 // Experience keywords for each position
 const experienceKeywords = {
     'Radish Lab': [
         '<span class="role">Web Developer</span>',
-        '<span class="tech">WordPress</span>',
-        '<span class="tech">PHP</span>',
-        '<span class="tech">JavaScript</span>',
-        '<span class="skill">REST APIs</span>',
-        '<span class="tech">MySQL</span>',
+        '<span class="tech">WordPress Core</span>',
+        '<span class="tech">PHP 8.x</span>',
+        '<span class="tech">Modern JavaScript</span>',
+        '<span class="skill">RESTful APIs</span>',
+        '<span class="tech">MySQL Optimization</span>',
         '<span class="skill">Cross-browser</span>',
         '<span class="keyword">Non-profit</span>',
         '<span class="tech">jQuery</span>',
-        '<span class="skill">Responsive</span>',
-        '<span class="tech">HTML5</span>',
-        '<span class="tech">CSS3</span>',
+        '<span class="skill">Responsive Design</span>',
+        '<span class="tech">HTML5/CSS3</span>',
         '<span class="skill">Performance</span>',
-        '<span class="keyword">Digital</span>',
-        '<span class="skill">Debugging</span>'
+        '<span class="keyword">Digital Solutions</span>',
+        '<span class="skill">Debugging</span>',
+        '<span class="tech">Git Workflow</span>'
     ],
     'ProZ.com': [
-        '<span class="role">Developer</span>',
-        '<span class="tech">PHP</span>',
+        '<span class="role">Full Stack Dev</span>',
+        '<span class="tech">PHP 7.x</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">Platform</span>',
-        '<span class="keyword">Translation</span>',
+        '<span class="skill">Platform Architecture</span>',
+        '<span class="keyword">Global Network</span>',
         '<span class="tech">jQuery</span>',
         '<span class="skill">Full-stack</span>',
-        '<span class="keyword">Million users</span>',
-        '<span class="tech">JavaScript</span>',
+        '<span class="keyword">Million Users</span>',
+        '<span class="tech">JavaScript ES6</span>',
         '<span class="skill">API Integration</span>',
-        '<span class="tech">Bootstrap</span>',
+        '<span class="tech">Bootstrap 4</span>',
         '<span class="skill">Security</span>',
-        '<span class="keyword">Global</span>',
+        '<span class="keyword">Translation Tech</span>',
         '<span class="tech">AJAX</span>',
-        '<span class="skill">Optimization</span>'
+        '<span class="skill">System Optimization</span>'
     ],
     'Ministerio de Producción de la Provincia de Bs As': [
-        '<span class="role">Full Stack</span>',
-        '<span class="tech">Laravel</span>',
-        '<span class="tech">REST</span>',
+        '<span class="role">Full Stack Lead</span>',
+        '<span class="tech">Laravel 8.x</span>',
+        '<span class="tech">REST API</span>',
         '<span class="skill">Security</span>',
         '<span class="keyword">Government</span>',
-        '<span class="tech">PHP</span>',
-        '<span class="skill">Database</span>',
-        '<span class="keyword">Records</span>',
+        '<span class="tech">PHP 7.x</span>',
+        '<span class="skill">Database Design</span>',
+        '<span class="keyword">Public Records</span>',
         '<span class="tech">MySQL</span>',
         '<span class="skill">Authentication</span>',
-        '<span class="tech">Vue.js</span>',
+        '<span class="tech">Vue.js 3</span>',
         '<span class="skill">API Design</span>',
-        '<span class="keyword">Public</span>',
+        '<span class="keyword">Public Sector</span>',
         '<span class="tech">Git</span>',
         '<span class="skill">Testing</span>'
     ],
     'Optimous': [
-        '<span class="role">Full-stack</span>',
-        '<span class="tech">PHP</span>',
+        '<span class="role">Full-stack Dev</span>',
+        '<span class="tech">PHP 7.x</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">REST</span>',
-        '<span class="keyword">Clients</span>',
-        '<span class="tech">JavaScript</span>',
+        '<span class="skill">RESTful APIs</span>',
+        '<span class="keyword">Enterprise</span>',
+        '<span class="tech">JavaScript ES6</span>',
         '<span class="skill">Web Apps</span>',
-        '<span class="keyword">Systems</span>',
+        '<span class="keyword">Custom Solutions</span>',
         '<span class="tech">jQuery</span>',
-        '<span class="skill">Frontend</span>',
-        '<span class="tech">Bootstrap</span>',
-        '<span class="skill">Backend</span>',
-        '<span class="keyword">Solutions</span>',
+        '<span class="skill">Frontend Dev</span>',
+        '<span class="tech">Bootstrap 4</span>',
+        '<span class="skill">Backend Dev</span>',
+        '<span class="keyword">Client Projects</span>',
         '<span class="tech">AJAX</span>',
-        '<span class="skill">Integration</span>'
+        '<span class="skill">System Integration</span>'
     ],
     'Le Utopik': [
-        '<span class="role">Ecommerce</span>',
-        '<span class="tech">Web Dev</span>',
-        '<span class="skill">Database</span>',
-        '<span class="keyword">Manager</span>',
-        '<span class="tech">Platform</span>',
-        '<span class="skill">Optimization</span>',
-        '<span class="keyword">Online</span>',
-        '<span class="tech">Systems</span>',
-        '<span class="tech">PHP</span>',
-        '<span class="skill">Marketing</span>',
-        '<span class="tech">MySQL</span>',
-        '<span class="skill">Analytics</span>',
-        '<span class="keyword">Sales</span>',
+        '<span class="role">E-commerce Lead</span>',
+        '<span class="tech">Web Development</span>',
+        '<span class="skill">Database Management</span>',
+        '<span class="keyword">Retail</span>',
+        '<span class="tech">E-commerce Platform</span>',
+        '<span class="skill">Performance Optimization</span>',
+        '<span class="keyword">Online Sales</span>',
+        '<span class="tech">PHP/MySQL</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">SEO</span>'
+        '<span class="skill">Digital Marketing</span>',
+        '<span class="tech">Analytics</span>',
+        '<span class="skill">SEO Strategy</span>',
+        '<span class="keyword">Business Growth</span>',
+        '<span class="tech">Responsive Design</span>',
+        '<span class="skill">UX/UI</span>'
     ],
     'El Misti Hostels & Pousadas': [
         '<span class="role">Tech Manager</span>',
         '<span class="tech">WordPress</span>',
-        '<span class="tech">PHP</span>',
-        '<span class="skill">Database</span>',
-        '<span class="keyword">Hostels</span>',
+        '<span class="tech">PHP/MySQL</span>',
+        '<span class="skill">Database Admin</span>',
+        '<span class="keyword">Hospitality</span>',
         '<span class="tech">jQuery</span>',
-        '<span class="skill">Web Dev</span>',
+        '<span class="skill">Web Development</span>',
         '<span class="keyword">Brazil</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">CMS</span>',
-        '<span class="tech">HTML5</span>',
-        '<span class="skill">Maintenance</span>',
-        '<span class="keyword">Tourism</span>',
-        '<span class="tech">CSS3</span>',
-        '<span class="skill">Support</span>'
+        '<span class="skill">CMS Management</span>',
+        '<span class="tech">HTML5/CSS3</span>',
+        '<span class="skill">System Maintenance</span>',
+        '<span class="keyword">Tourism Tech</span>',
+        '<span class="tech">Responsive Design</span>',
+        '<span class="skill">Technical Support</span>'
     ],
     'Universidad de la República': [
         '<span class="role">Professor</span>',
-        '<span class="tech">Teaching</span>',
+        '<span class="tech">Digital Archives</span>',
         '<span class="skill">Education</span>',
-        '<span class="keyword">Uruguay</span>',
-        '<span class="tech">Digital</span>',
-        '<span class="skill">Archives</span>',
-        '<span class="keyword">University</span>',
-        '<span class="tech">Database</span>',
-        '<span class="skill">Curriculum</span>',
         '<span class="keyword">Academic</span>',
-        '<span class="tech">Web</span>',
+        '<span class="tech">Web Development</span>',
+        '<span class="skill">Curriculum Design</span>',
+        '<span class="keyword">Higher Education</span>',
+        '<span class="tech">Database Systems</span>',
         '<span class="skill">Research</span>',
-        '<span class="keyword">Students</span>',
-        '<span class="tech">Content</span>',
-        '<span class="skill">Development</span>'
+        '<span class="keyword">Uruguay</span>',
+        '<span class="tech">Content Creation</span>',
+        '<span class="skill">Digital Literacy</span>',
+        '<span class="keyword">University</span>',
+        '<span class="tech">Web Technologies</span>',
+        '<span class="skill">Teaching</span>'
     ],
     'Universia': [
         '<span class="role">Tech Lead</span>',
-        '<span class="tech">Web Dev</span>',
-        '<span class="skill">Database</span>',
-        '<span class="keyword">Spain</span>',
-        '<span class="tech">PHP</span>',
-        '<span class="skill">Management</span>',
-        '<span class="keyword">Education</span>',
-        '<span class="tech">MySQL</span>',
-        '<span class="skill">Platform</span>',
-        '<span class="keyword">Global</span>',
+        '<span class="tech">Web Development</span>',
+        '<span class="skill">Database Architecture</span>',
+        '<span class="keyword">Education Tech</span>',
+        '<span class="tech">PHP/MySQL</span>',
+        '<span class="skill">Team Leadership</span>',
+        '<span class="keyword">Global Network</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">Integration</span>',
-        '<span class="keyword">Network</span>',
-        '<span class="tech">CMS</span>',
-        '<span class="skill">Architecture</span>'
+        '<span class="skill">Platform Development</span>',
+        '<span class="keyword">Spain</span>',
+        '<span class="tech">CMS Systems</span>',
+        '<span class="skill">System Integration</span>',
+        '<span class="keyword">Digital Education</span>',
+        '<span class="tech">Web Standards</span>',
+        '<span class="skill">Technical Architecture</span>'
     ],
     'Amnistía Internacional': [
         '<span class="role">Web Manager</span>',
-        '<span class="tech">CMS</span>',
-        '<span class="skill">Content</span>',
-        '<span class="keyword">NGO</span>',
-        '<span class="tech">PHP</span>',
-        '<span class="skill">Management</span>',
+        '<span class="tech">CMS Development</span>',
+        '<span class="skill">Content Strategy</span>',
         '<span class="keyword">Human Rights</span>',
-        '<span class="tech">MySQL</span>',
-        '<span class="skill">Platform</span>',
-        '<span class="keyword">Global</span>',
+        '<span class="tech">PHP/MySQL</span>',
+        '<span class="skill">Digital Strategy</span>',
+        '<span class="keyword">Global NGO</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">Integration</span>',
+        '<span class="skill">Platform Management</span>',
         '<span class="keyword">Advocacy</span>',
-        '<span class="tech">HTML</span>',
-        '<span class="skill">Development</span>'
+        '<span class="tech">HTML5/CSS3</span>',
+        '<span class="skill">Web Development</span>',
+        '<span class="keyword">Non-profit</span>',
+        '<span class="tech">Responsive Design</span>',
+        '<span class="skill">Digital Campaigns</span>'
     ],
     'Bit Sistemas': [
-        '<span class="role">Assistant</span>',
-        '<span class="tech">Support</span>',
-        '<span class="skill">Development</span>',
-        '<span class="keyword">Spain</span>',
-        '<span class="tech">PHP</span>',
-        '<span class="skill">Maintenance</span>',
-        '<span class="keyword">Systems</span>',
-        '<span class="tech">MySQL</span>',
-        '<span class="skill">Technical</span>',
-        '<span class="keyword">IT</span>',
+        '<span class="role">Tech Assistant</span>',
+        '<span class="tech">Development Support</span>',
+        '<span class="skill">Technical Support</span>',
+        '<span class="keyword">IT Services</span>',
+        '<span class="tech">PHP/MySQL</span>',
+        '<span class="skill">System Maintenance</span>',
+        '<span class="keyword">Software Solutions</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">Support</span>',
-        '<span class="keyword">Software</span>',
-        '<span class="tech">HTML</span>',
-        '<span class="skill">Implementation</span>'
+        '<span class="skill">Implementation</span>',
+        '<span class="keyword">Spain</span>',
+        '<span class="tech">Web Technologies</span>',
+        '<span class="skill">Technical Support</span>',
+        '<span class="keyword">IT Support</span>',
+        '<span class="tech">HTML/CSS</span>',
+        '<span class="skill">Development</span>'
     ]
 };
 
