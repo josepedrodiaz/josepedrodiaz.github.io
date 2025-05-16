@@ -226,22 +226,41 @@ document.querySelectorAll('.experience-card').forEach(card => {
         // Create keyword bubble
         const bubble = document.createElement('div');
         bubble.className = 'code-bubble';
-        bubble.style.left = x + 'px';
+        
+        // Check if we're on mobile
+        const isMobile = window.innerWidth <= 768;
+        
+        // Calculate bubble position based on touch position
+        if (isMobile) {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.width / 2;
+            const relativeX = x - cardRect.left;
+            
+            // Position bubble on the opposite side of the touch
+            if (relativeX > cardCenter) {
+                // Touch is on the right side, show bubble on the left
+                bubble.style.left = (x - 120) + 'px';
+                bubble.style.setProperty('--random-x', '-0.5');
+            } else {
+                // Touch is on the left side, show bubble on the right
+                bubble.style.left = (x + 20) + 'px';
+                bubble.style.setProperty('--random-x', '0.5');
+            }
+        } else {
+            bubble.style.left = x + 'px';
+            bubble.style.setProperty('--random-x', (Math.random() * 2 - 1).toFixed(1));
+        }
+        
         bubble.style.top = y + 'px';
         
         // Only create bubble if we have keywords for this company
         if (keywords.length > 0) {
             bubble.innerHTML = keywords[Math.floor(Math.random() * keywords.length)];
             
-            // Check if we're on mobile
-            const isMobile = window.innerWidth <= 768;
-            
             // Simplified random dispersion with more vertical movement on mobile
             if (isMobile) {
-                bubble.style.setProperty('--random-x', (Math.random() * 1 - 0.5).toFixed(1));
                 bubble.style.setProperty('--random-y', (Math.random() * 1.5 + 0.5).toFixed(1));
             } else {
-                bubble.style.setProperty('--random-x', (Math.random() * 2 - 1).toFixed(1));
                 bubble.style.setProperty('--random-y', (Math.random() * 1.2).toFixed(1));
             }
             
