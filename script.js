@@ -200,6 +200,8 @@ document.querySelectorAll('.experience-card').forEach(card => {
     const colorReference = document.querySelector('.color-reference');
     let touchTimeout;
     let isTouching = false;
+    let lastTouchY = 0;
+    let isScrolling = false;
 
     // Get company name from the card
     const titleText = card.querySelector('h3').textContent;
@@ -215,6 +217,8 @@ document.querySelectorAll('.experience-card').forEach(card => {
     };
 
     const createBubble = (x, y) => {
+        if (isScrolling) return; // Don't create bubbles while scrolling
+        
         const now = Date.now();
         if (now - lastBubbleTime < bubbleInterval || activeBubbles >= maxBubbles) return;
         lastBubbleTime = now;
@@ -273,7 +277,10 @@ document.querySelectorAll('.experience-card').forEach(card => {
     // Touch events
     card.addEventListener('touchstart', (e) => {
         isTouching = true;
+        isScrolling = false;
+        lastTouchY = e.touches[0].clientY;
         showColorReference();
+        
         const touch = e.touches[0];
         const rect = card.getBoundingClientRect();
         const x = touch.clientX - rect.left;
@@ -284,7 +291,7 @@ document.querySelectorAll('.experience-card').forEach(card => {
         
         // Start continuous bubble creation
         touchTimeout = setInterval(() => {
-            if (!isTouching) {
+            if (!isTouching || isScrolling) {
                 clearInterval(touchTimeout);
                 return;
             }
@@ -298,7 +305,20 @@ document.querySelectorAll('.experience-card').forEach(card => {
 
     card.addEventListener('touchmove', (e) => {
         if (!isTouching) return;
+        
         const touch = e.touches[0];
+        const currentY = touch.clientY;
+        const deltaY = Math.abs(currentY - lastTouchY);
+        
+        // If the touch movement is primarily vertical, consider it scrolling
+        if (deltaY > 5) {
+            isScrolling = true;
+            clearInterval(touchTimeout);
+            return;
+        }
+        
+        lastTouchY = currentY;
+        
         const rect = card.getBoundingClientRect();
         const x = touch.clientX - rect.left;
         const y = touch.clientY - rect.top;
@@ -307,12 +327,14 @@ document.querySelectorAll('.experience-card').forEach(card => {
 
     card.addEventListener('touchend', () => {
         isTouching = false;
+        isScrolling = false;
         hideColorReference();
         clearInterval(touchTimeout);
     });
 
     card.addEventListener('touchcancel', () => {
         isTouching = false;
+        isScrolling = false;
         hideColorReference();
         clearInterval(touchTimeout);
     });
