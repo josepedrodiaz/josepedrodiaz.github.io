@@ -48,7 +48,6 @@ body {
 .experience-card {
     position: relative;
     overflow: hidden;
-    touch-action: none; /* Prevents default touch actions like scrolling */
     -webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
     transition: all 0.3s ease;
 }
@@ -199,8 +198,30 @@ body {
     }
 
     .code-bubble {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 1.4rem;
+        padding: 0.6rem 1.2rem;
+        animation: floatAndDisperseMobile 4s ease-out forwards;
+    }
+
+    @keyframes floatAndDisperseMobile {
+        0% {
+            transform: translate(0, 0) scale(0.8);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(
+                calc(var(--random-x) * 50px),
+                calc(var(--random-y) * -250px)
+            ) 
+            scale(0.8);
+            opacity: 0;
+        }
     }
 
     .color-reference {

@@ -199,6 +199,7 @@ document.querySelectorAll('.experience-card').forEach(card => {
     const maxBubbles = 5;
     const colorReference = document.querySelector('.color-reference');
     let touchTimeout;
+    let isTouching = false;
 
     // Get company name from the card
     const titleText = card.querySelector('h3').textContent;
@@ -228,9 +229,17 @@ document.querySelectorAll('.experience-card').forEach(card => {
         if (keywords.length > 0) {
             bubble.innerHTML = keywords[Math.floor(Math.random() * keywords.length)];
             
-            // Simplified random dispersion
-            bubble.style.setProperty('--random-x', (Math.random() * 2 - 1).toFixed(1));
-            bubble.style.setProperty('--random-y', (Math.random() * 1.2).toFixed(1));
+            // Check if we're on mobile
+            const isMobile = window.innerWidth <= 768;
+            
+            // Simplified random dispersion with more vertical movement on mobile
+            if (isMobile) {
+                bubble.style.setProperty('--random-x', (Math.random() * 1 - 0.5).toFixed(1));
+                bubble.style.setProperty('--random-y', (Math.random() * 1.5 + 0.5).toFixed(1));
+            } else {
+                bubble.style.setProperty('--random-x', (Math.random() * 2 - 1).toFixed(1));
+                bubble.style.setProperty('--random-y', (Math.random() * 1.2).toFixed(1));
+            }
             
             card.appendChild(bubble);
             activeBubbles++;
@@ -247,7 +256,7 @@ document.querySelectorAll('.experience-card').forEach(card => {
                 bubble.remove();
                 ripple.remove();
                 activeBubbles--;
-            }, 3000);
+            }, isMobile ? 4000 : 3000);
         }
     };
 
@@ -263,7 +272,7 @@ document.querySelectorAll('.experience-card').forEach(card => {
 
     // Touch events
     card.addEventListener('touchstart', (e) => {
-        e.preventDefault();
+        isTouching = true;
         showColorReference();
         const touch = e.touches[0];
         const rect = card.getBoundingClientRect();
@@ -275,6 +284,10 @@ document.querySelectorAll('.experience-card').forEach(card => {
         
         // Start continuous bubble creation
         touchTimeout = setInterval(() => {
+            if (!isTouching) {
+                clearInterval(touchTimeout);
+                return;
+            }
             const touch = e.touches[0];
             const rect = card.getBoundingClientRect();
             const x = touch.clientX - rect.left;
@@ -284,7 +297,7 @@ document.querySelectorAll('.experience-card').forEach(card => {
     });
 
     card.addEventListener('touchmove', (e) => {
-        e.preventDefault();
+        if (!isTouching) return;
         const touch = e.touches[0];
         const rect = card.getBoundingClientRect();
         const x = touch.clientX - rect.left;
@@ -293,11 +306,13 @@ document.querySelectorAll('.experience-card').forEach(card => {
     });
 
     card.addEventListener('touchend', () => {
+        isTouching = false;
         hideColorReference();
         clearInterval(touchTimeout);
     });
 
     card.addEventListener('touchcancel', () => {
+        isTouching = false;
         hideColorReference();
         clearInterval(touchTimeout);
     });
