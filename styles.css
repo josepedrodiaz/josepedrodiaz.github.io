@@ -163,7 +163,7 @@ body {
 /* Color reference box */
 .color-reference {
     position: fixed;
-    right: 1rem;
+    right: -300px; /* Start off-screen */
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.85);
@@ -172,7 +172,7 @@ body {
     border-radius: 1rem;
     z-index: 1000;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.5s ease;
     pointer-events: none;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -180,6 +180,7 @@ body {
 
 .color-reference.visible {
     opacity: 1;
+    right: 1rem; /* Slide in from right */
 }
 
 .color-reference-item {
@@ -251,12 +252,16 @@ body {
 
     .color-reference {
         right: auto;
-        left: 1rem;
+        left: -300px; /* Start off-screen on mobile */
         top: 1rem;
         bottom: auto;
         transform: none;
         padding: 1rem;
         font-size: 0.9rem;
+    }
+
+    .color-reference.visible {
+        left: 1rem; /* Slide in from left on mobile */
     }
 
     .color-reference-item {

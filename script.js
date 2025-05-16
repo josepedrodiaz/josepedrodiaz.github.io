@@ -236,6 +236,7 @@ document.querySelectorAll('.experience-card').forEach(card => {
     let isTouching = false;
     let lastTouchY = 0;
     let isScrolling = false;
+    let referenceTimeout;
 
     // Get company name from the card
     const titleText = card.querySelector('h3').textContent;
@@ -244,10 +245,24 @@ document.querySelectorAll('.experience-card').forEach(card => {
 
     const showColorReference = () => {
         colorReference.classList.add('visible');
+        // Clear any existing timeout
+        if (referenceTimeout) {
+            clearTimeout(referenceTimeout);
+        }
+        // Set new timeout to hide after 5 seconds
+        referenceTimeout = setTimeout(() => {
+            colorReference.classList.remove('visible');
+        }, 5000);
     };
 
     const hideColorReference = () => {
-        colorReference.classList.remove('visible');
+        // Only hide if we're not touching
+        if (!isTouching) {
+            colorReference.classList.remove('visible');
+            if (referenceTimeout) {
+                clearTimeout(referenceTimeout);
+            }
+        }
     };
 
     const createBubble = (x, y) => {
