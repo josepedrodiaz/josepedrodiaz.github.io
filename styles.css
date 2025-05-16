@@ -203,6 +203,32 @@ body {
         animation: floatAndDisperseMobile 4s ease-out forwards;
     }
 
+    .color-reference {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 1rem;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        padding: 0.6rem 1rem;
+        border-radius: 2rem;
+        display: flex;
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .color-reference-item {
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    .color-dot {
+        width: 6px;
+        height: 6px;
+        margin-right: 4px;
+    }
+
     @keyframes floatAndDisperseMobile {
         0% {
             transform: translate(0, 0) scale(0.8);
@@ -222,11 +248,5 @@ body {
             scale(0.8);
             opacity: 0;
         }
-    }
-
-    .color-reference {
-        right: 0.5rem;
-        padding: 0.8rem;
-        font-size: 0.9rem;
     }
 } 
