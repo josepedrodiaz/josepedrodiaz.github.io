@@ -49,11 +49,12 @@ body {
     position: relative;
     overflow: hidden;
     -webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     user-select: none; /* Prevents text selection */
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE/Edge */
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .experience-card::before {
@@ -73,7 +74,8 @@ body {
 }
 
 .experience-card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Code bubble styles */
@@ -176,6 +178,7 @@ body {
     pointer-events: none;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .color-reference.visible {
@@ -425,4 +428,28 @@ nav.visible {
 nav a.text-2xl {
     position: relative;
     z-index: 51;
+}
+
+.keyword-bubble {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.keyword-bubble.visible {
+    opacity: 1;
+    transform: translateY(0);
 } 
