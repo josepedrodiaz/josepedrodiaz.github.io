@@ -1,3 +1,23 @@
+// Splash Screen Control
+document.addEventListener('DOMContentLoaded', () => {
+    const splashScreen = document.getElementById('splash-screen');
+    const body = document.body;
+
+    // Prevent scrolling while splash screen is visible
+    body.style.overflow = 'hidden';
+
+    // Hide splash screen after animations complete
+    setTimeout(() => {
+        splashScreen.classList.add('fade-out');
+        body.style.overflow = '';
+        
+        // Remove splash screen from DOM after fade out
+        setTimeout(() => {
+            splashScreen.remove();
+        }, 1000);
+    }, 3000);
+});
+
 // Experience keywords for each position
 const experienceKeywords = {
     'Radish Lab': [
