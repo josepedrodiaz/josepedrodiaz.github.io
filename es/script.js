@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (langSwitch) {
         langSwitch.addEventListener('change', function() {
-            if (this.checked) {
-                // Switch to Spanish
-                window.location.href = '/es/index.html';
+            if (!this.checked) {
+                // Switch to English
+                window.location.href = '../index.html';
             }
         });
     }
@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update active label styling
     langLabels.forEach(label => {
         label.addEventListener('click', function() {
-            const isSpanish = this.textContent === 'ES';
-            if (isSpanish) {
-                window.location.href = '/es/index.html';
+            const isEnglish = this.textContent === 'EN';
+            if (isEnglish) {
+                window.location.href = '../index.html';
             }
         });
     });
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         splashText.classList.add('transforming');
         splashTagline.classList.add('transforming');
         loaderLine.classList.add('transforming');
-        
+
         // Show nav after a short delay
         setTimeout(() => {
             nav.classList.add('visible');
             body.style.overflow = '';
-            
+
             // Remove splash screen elements after transition
             setTimeout(() => {
                 splashTagline.remove();
@@ -57,185 +57,185 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000);
 });
 
-// Experience keywords for each position
+// Experience keywords for each position (Spanish version)
 const experienceKeywords = {
     'Radish Lab': [
-        '<span class="role">Web Developer</span>',
+        '<span class="role">Desarrollador Web</span>',
         '<span class="tech">WordPress Core</span>',
         '<span class="tech">PHP 8.x</span>',
-        '<span class="tech">Modern JavaScript</span>',
-        '<span class="skill">RESTful APIs</span>',
+        '<span class="tech">JavaScript Moderno</span>',
+        '<span class="skill">APIs RESTful</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">Responsive Design</span>',
-        '<span class="keyword">Non-profit</span>',
+        '<span class="skill">Diseño Responsive</span>',
+        '<span class="keyword">Sin Fines de Lucro</span>',
         '<span class="tech">jQuery</span>',
         '<span class="tech">HTML5/CSS3</span>',
-        '<span class="skill">Performance</span>',
-        '<span class="tech">Git Workflow</span>',
-        '<span class="skill">Debugging</span>',
+        '<span class="skill">Rendimiento</span>',
+        '<span class="tech">Flujo Git</span>',
+        '<span class="skill">Depuración</span>',
         '<span class="skill">Full-stack</span>',
-        '<span class="keyword">Digital Solutions</span>',
+        '<span class="keyword">Soluciones Digitales</span>',
         '<span class="keyword">Sage Root</span>',
         '<span class="tech">Laravel</span>',
     ],
     'ProZ.com': [
-        '<span class="role">Full Stack Dev</span>',
+        '<span class="role">Dev Full Stack</span>',
         '<span class="tech">PHP 7.x</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">Platform Architecture</span>',
-        '<span class="keyword">Global Network</span>',
+        '<span class="skill">Arquitectura de Plataforma</span>',
+        '<span class="keyword">Red Global</span>',
         '<span class="tech">jQuery</span>',
         '<span class="skill">Full-stack</span>',
-        '<span class="keyword">Million Users</span>',
+        '<span class="keyword">Millón de Usuarios</span>',
         '<span class="tech">JavaScript ES6</span>',
-        '<span class="skill">API Integration</span>',
+        '<span class="skill">Integración API</span>',
         '<span class="tech">Bootstrap 4</span>',
-        '<span class="skill">Security</span>',
-        '<span class="keyword">Translation Tech</span>',
+        '<span class="skill">Seguridad</span>',
+        '<span class="keyword">Tecnología de Traducción</span>',
         '<span class="tech">AJAX</span>',
-        '<span class="skill">System Optimization</span>'
+        '<span class="skill">Optimización de Sistemas</span>'
     ],
     'Ministerio de Producción de la Provincia de Bs As': [
-        '<span class="role">Full Stack Lead</span>',
+        '<span class="role">Líder Full Stack</span>',
         '<span class="tech">Laravel 8.x</span>',
         '<span class="tech">REST API</span>',
-        '<span class="skill">Security</span>',
-        '<span class="keyword">Government</span>',
+        '<span class="skill">Seguridad</span>',
+        '<span class="keyword">Gobierno</span>',
         '<span class="tech">PHP 7.x</span>',
-        '<span class="skill">Database Design</span>',
-        '<span class="keyword">Public Records</span>',
+        '<span class="skill">Diseño de Base de Datos</span>',
+        '<span class="keyword">Registros Públicos</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">Authentication</span>',
+        '<span class="skill">Autenticación</span>',
         '<span class="tech">Vue.js 3</span>',
-        '<span class="skill">API Design</span>',
-        '<span class="keyword">Public Sector</span>',
+        '<span class="skill">Diseño de API</span>',
+        '<span class="keyword">Sector Público</span>',
         '<span class="tech">Git</span>',
         '<span class="skill">Testing</span>',
         '<span class="tech">Angular</span>',
-        '<span class="skill">Frontend Dev</span>',
-        '<span class="tech">Backend Dev</span>',
-        '<span class="skill">System Integration</span>',
-        '<span class="keyword">Public Sector</span>',
+        '<span class="skill">Dev Frontend</span>',
+        '<span class="tech">Dev Backend</span>',
+        '<span class="skill">Integración de Sistemas</span>',
+        '<span class="keyword">Sector Público</span>',
         '<span class="tech">Git</span>',
     ],
     'Optimous': [
-        '<span class="role">Full-stack Dev</span>',
+        '<span class="role">Dev Full-stack</span>',
         '<span class="tech">PHP 7.x</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">RESTful APIs</span>',
-        '<span class="keyword">Enterprise</span>',
+        '<span class="skill">APIs RESTful</span>',
+        '<span class="keyword">Empresarial</span>',
         '<span class="tech">JavaScript ES6</span>',
-        '<span class="skill">Web Apps</span>',
-        '<span class="keyword">Custom Solutions</span>',
+        '<span class="skill">Apps Web</span>',
+        '<span class="keyword">Soluciones Personalizadas</span>',
         '<span class="tech">jQuery</span>',
-        '<span class="skill">Frontend Dev</span>',
+        '<span class="skill">Dev Frontend</span>',
         '<span class="tech">Bootstrap 4</span>',
-        '<span class="skill">Backend Dev</span>',
-        '<span class="keyword">Client Projects</span>',
+        '<span class="skill">Dev Backend</span>',
+        '<span class="keyword">Proyectos de Clientes</span>',
         '<span class="tech">AJAX</span>',
-        '<span class="skill">System Integration</span>'
+        '<span class="skill">Integración de Sistemas</span>'
     ],
     'Le Utopik': [
-        '<span class="role">E-commerce Lead</span>',
-        '<span class="tech">Web Development</span>',
-        '<span class="skill">Database Management</span>',
+        '<span class="role">Líder E-commerce</span>',
+        '<span class="tech">Desarrollo Web</span>',
+        '<span class="skill">Gestión de Base de Datos</span>',
         '<span class="keyword">Retail</span>',
-        '<span class="tech">E-commerce Platform</span>',
-        '<span class="skill">Performance Optimization</span>',
-        '<span class="keyword">Online Sales</span>',
+        '<span class="tech">Plataforma E-commerce</span>',
+        '<span class="skill">Optimización de Rendimiento</span>',
+        '<span class="keyword">Ventas Online</span>',
         '<span class="tech">PHP/MySQL</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">Digital Marketing</span>',
+        '<span class="skill">Marketing Digital</span>',
         '<span class="tech">Analytics</span>',
-        '<span class="skill">SEO Strategy</span>',
-        '<span class="keyword">Business Growth</span>',
-        '<span class="tech">Responsive Design</span>',
+        '<span class="skill">Estrategia SEO</span>',
+        '<span class="keyword">Crecimiento Empresarial</span>',
+        '<span class="tech">Diseño Responsive</span>',
         '<span class="skill">UX/UI</span>'
     ],
     'El Misti Hostels & Pousadas': [
-        '<span class="role">Tech Manager</span>',
+        '<span class="role">Gerente de Tecnología</span>',
         '<span class="tech">WordPress</span>',
         '<span class="tech">PHP/MySQL</span>',
-        '<span class="skill">Database Admin</span>',
-        '<span class="keyword">Hospitality</span>',
+        '<span class="skill">Admin de Base de Datos</span>',
+        '<span class="keyword">Hospitalidad</span>',
         '<span class="tech">jQuery</span>',
-        '<span class="skill">Web Development</span>',
-        '<span class="keyword">Brazil</span>',
+        '<span class="skill">Desarrollo Web</span>',
+        '<span class="keyword">Brasil</span>',
         '<span class="tech">MySQL</span>',
-        '<span class="skill">CMS Management</span>',
+        '<span class="skill">Gestión CMS</span>',
         '<span class="tech">HTML5/CSS3</span>',
-        '<span class="skill">System Maintenance</span>',
-        '<span class="keyword">Tourism Tech</span>',
-        '<span class="tech">Responsive Design</span>',
-        '<span class="skill">Technical Support</span>'
+        '<span class="skill">Mantenimiento de Sistemas</span>',
+        '<span class="keyword">Tecnología Turística</span>',
+        '<span class="tech">Diseño Responsive</span>',
+        '<span class="skill">Soporte Técnico</span>'
     ],
     'Universidad de la República': [
-        '<span class="role">Professor</span>',
-        '<span class="tech">Digital Archives</span>',
-        '<span class="skill">Education</span>',
-        '<span class="keyword">Academic</span>',
-        '<span class="tech">Web Development</span>',
-        '<span class="skill">Curriculum Design</span>',
-        '<span class="keyword">Higher Education</span>',
-        '<span class="tech">Database Systems</span>',
-        '<span class="skill">Research</span>',
+        '<span class="role">Profesor</span>',
+        '<span class="tech">Archivos Digitales</span>',
+        '<span class="skill">Educación</span>',
+        '<span class="keyword">Académico</span>',
+        '<span class="tech">Desarrollo Web</span>',
+        '<span class="skill">Diseño Curricular</span>',
+        '<span class="keyword">Educación Superior</span>',
+        '<span class="tech">Sistemas de Base de Datos</span>',
+        '<span class="skill">Investigación</span>',
         '<span class="keyword">Uruguay</span>',
-        '<span class="tech">Content Creation</span>',
-        '<span class="skill">Digital Literacy</span>',
-        '<span class="keyword">University</span>',
-        '<span class="tech">Web Technologies</span>',
-        '<span class="skill">Teaching</span>'
+        '<span class="tech">Creación de Contenido</span>',
+        '<span class="skill">Alfabetización Digital</span>',
+        '<span class="keyword">Universidad</span>',
+        '<span class="tech">Tecnologías Web</span>',
+        '<span class="skill">Enseñanza</span>'
     ],
     'Universia': [
-        '<span class="role">Tech Lead</span>',
-        '<span class="tech">Web Development</span>',
-        '<span class="skill">Database Architecture</span>',
-        '<span class="keyword">Education Tech</span>',
+        '<span class="role">Líder Tecnológico</span>',
+        '<span class="tech">Desarrollo Web</span>',
+        '<span class="skill">Arquitectura de Base de Datos</span>',
+        '<span class="keyword">Tecnología Educativa</span>',
         '<span class="tech">PHP/MySQL</span>',
-        '<span class="skill">Team Leadership</span>',
-        '<span class="keyword">Global Network</span>',
+        '<span class="skill">Liderazgo de Equipo</span>',
+        '<span class="keyword">Red Global</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">Platform Development</span>',
-        '<span class="keyword">Spain</span>',
-        '<span class="tech">CMS Systems</span>',
-        '<span class="skill">System Integration</span>',
-        '<span class="keyword">Digital Education</span>',
-        '<span class="tech">Web Standards</span>',
-        '<span class="skill">Technical Architecture</span>'
+        '<span class="skill">Desarrollo de Plataforma</span>',
+        '<span class="keyword">España</span>',
+        '<span class="tech">Sistemas CMS</span>',
+        '<span class="skill">Integración de Sistemas</span>',
+        '<span class="keyword">Educación Digital</span>',
+        '<span class="tech">Estándares Web</span>',
+        '<span class="skill">Arquitectura Técnica</span>'
     ],
     'Amnistía Internacional': [
-        '<span class="role">Web Manager</span>',
-        '<span class="tech">CMS Development</span>',
-        '<span class="skill">Content Strategy</span>',
-        '<span class="keyword">Human Rights</span>',
+        '<span class="role">Gerente Web</span>',
+        '<span class="tech">Desarrollo CMS</span>',
+        '<span class="skill">Estrategia de Contenido</span>',
+        '<span class="keyword">Derechos Humanos</span>',
         '<span class="tech">PHP/MySQL</span>',
-        '<span class="skill">Digital Strategy</span>',
-        '<span class="keyword">Global NGO</span>',
+        '<span class="skill">Estrategia Digital</span>',
+        '<span class="keyword">ONG Global</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">Platform Management</span>',
-        '<span class="keyword">Advocacy</span>',
+        '<span class="skill">Gestión de Plataforma</span>',
+        '<span class="keyword">Defensa</span>',
         '<span class="tech">HTML5/CSS3</span>',
-        '<span class="skill">Web Development</span>',
-        '<span class="keyword">Non-profit</span>',
-        '<span class="tech">Responsive Design</span>',
-        '<span class="skill">Digital Campaigns</span>'
+        '<span class="skill">Desarrollo Web</span>',
+        '<span class="keyword">Sin Fines de Lucro</span>',
+        '<span class="tech">Diseño Responsive</span>',
+        '<span class="skill">Campañas Digitales</span>'
     ],
     'Bit Sistemas': [
-        '<span class="role">Tech Assistant</span>',
-        '<span class="tech">Development Support</span>',
-        '<span class="skill">Technical Support</span>',
-        '<span class="keyword">IT Services</span>',
+        '<span class="role">Asistente Técnico</span>',
+        '<span class="tech">Soporte de Desarrollo</span>',
+        '<span class="skill">Soporte Técnico</span>',
+        '<span class="keyword">Servicios IT</span>',
         '<span class="tech">PHP/MySQL</span>',
-        '<span class="skill">System Maintenance</span>',
-        '<span class="keyword">Software Solutions</span>',
+        '<span class="skill">Mantenimiento de Sistemas</span>',
+        '<span class="keyword">Soluciones de Software</span>',
         '<span class="tech">JavaScript</span>',
-        '<span class="skill">Implementation</span>',
-        '<span class="keyword">Spain</span>',
-        '<span class="tech">Web Technologies</span>',
-        '<span class="skill">Technical Support</span>',
-        '<span class="keyword">IT Support</span>',
+        '<span class="skill">Implementación</span>',
+        '<span class="keyword">España</span>',
+        '<span class="tech">Tecnologías Web</span>',
+        '<span class="skill">Soporte Técnico</span>',
+        '<span class="keyword">Soporte IT</span>',
         '<span class="tech">HTML/CSS</span>',
-        '<span class="skill">Development</span>'
+        '<span class="skill">Desarrollo</span>'
     ]
 };
 
@@ -300,7 +300,7 @@ document.querySelectorAll('.experience-card').forEach(card => {
 
     const createBubble = (x, y) => {
         if (isScrolling) return; // Don't create bubbles while scrolling
-        
+
         const now = Date.now();
         if (now - lastBubbleTime < bubbleInterval || activeBubbles >= maxBubbles) return;
         lastBubbleTime = now;
@@ -308,16 +308,16 @@ document.querySelectorAll('.experience-card').forEach(card => {
         // Create keyword bubble
         const bubble = document.createElement('div');
         bubble.className = 'code-bubble';
-        
+
         // Check if we're on mobile
         const isMobile = window.innerWidth <= 768;
-        
+
         // Calculate bubble position based on touch position
         if (isMobile) {
             const cardRect = card.getBoundingClientRect();
             const cardCenter = cardRect.width / 2;
             const relativeX = x - cardRect.left;
-            
+
             // Position bubble on the opposite side of the touch
             if (relativeX > cardCenter) {
                 // Touch is on the right side, show bubble on the left
@@ -332,20 +332,20 @@ document.querySelectorAll('.experience-card').forEach(card => {
             bubble.style.left = x + 'px';
             bubble.style.setProperty('--random-x', (Math.random() * 2 - 1).toFixed(1));
         }
-        
+
         bubble.style.top = y + 'px';
-        
+
         // Only create bubble if we have keywords for this company
         if (keywords.length > 0) {
             bubble.innerHTML = keywords[Math.floor(Math.random() * keywords.length)];
-            
+
             // Simplified random dispersion with more vertical movement on mobile
             if (isMobile) {
                 bubble.style.setProperty('--random-y', (Math.random() * 1.5 + 0.5).toFixed(1));
             } else {
                 bubble.style.setProperty('--random-y', (Math.random() * 1.2).toFixed(1));
             }
-            
+
             card.appendChild(bubble);
             activeBubbles++;
 
@@ -381,15 +381,15 @@ document.querySelectorAll('.experience-card').forEach(card => {
         isScrolling = false;
         lastTouchY = e.touches[0].clientY;
         showColorReference();
-        
+
         const touch = e.touches[0];
         const rect = card.getBoundingClientRect();
         const x = touch.clientX - rect.left;
         const y = touch.clientY - rect.top;
-        
+
         // Create initial bubble
         createBubble(x, y);
-        
+
         // Start continuous bubble creation
         touchTimeout = setInterval(() => {
             if (!isTouching || isScrolling) {
@@ -406,20 +406,20 @@ document.querySelectorAll('.experience-card').forEach(card => {
 
     card.addEventListener('touchmove', (e) => {
         if (!isTouching) return;
-        
+
         const touch = e.touches[0];
         const currentY = touch.clientY;
         const deltaY = Math.abs(currentY - lastTouchY);
-        
+
         // If the touch movement is primarily vertical, consider it scrolling
         if (deltaY > 5) {
             isScrolling = true;
             clearInterval(touchTimeout);
             return;
         }
-        
+
         lastTouchY = currentY;
-        
+
         const rect = card.getBoundingClientRect();
         const x = touch.clientX - rect.left;
         const y = touch.clientY - rect.top;
@@ -439,4 +439,4 @@ document.querySelectorAll('.experience-card').forEach(card => {
         hideColorReference();
         clearInterval(touchTimeout);
     });
-}); 
+});

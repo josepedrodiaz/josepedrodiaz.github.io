@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Pedro Díaz - Desarrollador Web</title>
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" media="(prefers-color-scheme: dark)">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-gray-50 font-sans leading-relaxed text-gray-900">
+    <!-- Splash Screen / Navigation -->
+    <div id="splash-screen" class="fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex flex-col items-center justify-center h-full px-4">
+            <div class="splash-text" style="margin-left: 1rem;">Pedro Díaz</div>
+            <div class="splash-tagline mt-4">Creando Experiencias Digitales</div>
+            <div class="loader-line mt-8"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gradient-to-r from-blue-900 to-blue-800 p-4 fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
+            <a href="#home" class="text-2xl font-bold hover-scale" style="margin-left: 1rem;">Pedro Díaz</a>
+            <div class="flex items-center gap-6">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <span class="lang-label">EN</span>
+                    <label class="switch">
+                        <input type="checkbox" id="langSwitch" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="lang-label active">ES</span>
+                </div>
+                <div>
+                    <a href="#about" class="nav-link mr-6">Acerca de</a>
+                    <a href="#experience" class="nav-link mr-6">Experiencia</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Image -->
+    <section id="home" class="bg-gradient-to-b from-blue-900 to-blue-800 text-white pt-32 pb-20 text-center min-h-screen flex items-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="fade-in">
+                <div class="flex justify-center mb-8">
+                    <picture>
+                        <source srcset="../img/josepedrodiaz.webp" type="image/webp">
+                        <img src="../img/josepedrodiaz.png" alt="Pedro Díaz" class="rounded-full h-40 w-40 object-cover border-4 border-white shadow-xl hover-scale" loading="lazy">
+                    </picture>
+                </div>
+                <h1 class="text-5xl font-extrabold mb-6">Hola, soy Pedro Díaz</h1>
+                <p class="text-xl mb-10 text-blue-100">Desarrollador Web | Archivista Digital | Eterno Aprendiz</p>
+                <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-xl font-semibold shadow-lg hover-scale inline-block transition duration-300">Ponerse en Contacto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-8 text-center text-gray-800">Acerca de Mí</h2>
+            <div class="bg-gray-50 rounded-2xl p-8 shadow-lg hover-scale">
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Soy un Desarrollador Web con formación en Ciencias de la Comunicación y Archivística Digital. Tengo experiencia trabajando con varios lenguajes de programación como PHP, JavaScript, HTML, CSS y WordPress. A lo largo de los años, he contribuido al desarrollo de software, marketing online y la creación de archivos digitales para instituciones prestigiosas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800">Experiencia</h2>
+
+            <div class="space-y-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Radish Lab - Desarrollador Full Stack</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Marzo 2021 - Presente | Nueva York, NY</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Desarrollo web utilizando el framework WordPress y tecnologías web modernas (PHP, JavaScript, jQuery, APIs REST)</li>
+                        <li>Desarrollo full-stack con enfoque en diseño responsive, compatibilidad entre navegadores y optimización de bases de datos</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">ProZ.com - Desarrollador Full Stack</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Marzo 2020 - Marzo 2021 | La Plata, Argentina</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Mantuve y mejoré una plataforma tecnológica que sirve a más de un millón de afiliados</li>
+                        <li>Implementé soluciones full-stack utilizando PHP, MySQL y tecnologías web modernas</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Ministerio de Producción de la Provincia de Bs As - Desarrollador Full Stack</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Marzo 2019 - Marzo 2020 | La Plata, Argentina</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Desarrollé un sistema de gestión de documentos electrónicos utilizando Laravel y APIs REST</li>
+                        <li>Implementé sistemas de autenticación seguros y estrategias de optimización de bases de datos</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Optimous - Desarrollador Full-stack</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Enero 2018 - Febrero 2019 | Buenos Aires, Argentina</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Desarrollé múltiples sistemas para clientes utilizando PHP, MySQL y tecnologías web modernas</li>
+                        <li>Implementé APIs RESTful y aplicaciones web responsive</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Le Utopik - Gerente de Ecommerce</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Enero 2017 - Enero 2018 | Gran Buenos Aires, Argentina</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Gestioné y optimicé las operaciones de la plataforma de e-commerce</li>
+                        <li>Implementé soluciones de desarrollo web y sistemas de gestión de bases de datos</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">El Misti Hostels & Pousadas - Gerente de Tecnología</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Junio 2010 - Junio 2017 | Río de Janeiro, Brasil</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Lideré iniciativas tecnológicas y proyectos de desarrollo web utilizando WordPress</li>
+                        <li>Gestioné sistemas de bases de datos e implementé soluciones compatibles entre navegadores</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Universidad de la República - Profesor</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>2007 - 2011 | Uruguay</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Enseñé Archivos Digitales y Creación de Contenido en Internet</li>
+                        <li>Desarrollé e implementé el plan de estudios de gestión de bases de datos</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Universia - Departamento de Tecnología</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Abril 2005 - Octubre 2010 | Montevideo, Uruguay</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Lideré iniciativas de desarrollo web y proyectos de gestión de bases de datos</li>
+                        <li>Implementé soluciones compatibles entre navegadores y sistemas de bases de datos relacionales</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Amnistía Internacional - Gerente Web</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>2009 | Uruguay</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Gestioné proyectos de desarrollo web y sistemas de gestión de contenido</li>
+                        <li>Implementé soluciones compatibles entre navegadores</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
+                    <h3 class="text-2xl font-bold text-blue-900">Bit Sistemas - Asistente</h3>
+                    <p class="text-blue-600 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Marzo 2005 - Julio 2005 | Montevideo, Uruguay</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-700">
+                        <li>Apoyé al equipo de desarrollo en varios proyectos técnicos</li>
+                        <li>Asistí en la implementación y mantenimiento de sistemas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Contacto</h2>
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg">
+                <div class="space-y-6">
+                    <p class="text-lg flex items-center">
+                        <i class="fas fa-envelope mr-4 text-2xl"></i>
+                        <a href="mailto:josepedrodiaz@gmail.com" class="hover:text-blue-200 transition duration-300">josepedrodiaz@gmail.com</a>
+                    </p>
+                    <p class="text-lg flex items-center">
+                        <i class="fab fa-linkedin mr-4 text-2xl"></i>
+                        <a href="https://www.linkedin.com/in/josepedrodiaz" class="hover:text-blue-200 transition duration-300">linkedin.com/in/josepedrodiaz</a>
+                    </p>
+                    <p class="text-lg flex items-center">
+                        <i class="fab fa-github mr-4 text-2xl"></i>
+                        <a href="https://github.com/josepedrodiaz" class="hover:text-blue-200 transition duration-300">github.com/josepedrodiaz</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center">
+        <p class="text-gray-400">&copy; <script>document.write(new Date().getFullYear());</script> Pedro Díaz.</p>
+    </footer>
+
+    <!-- Add this before the closing body tag -->
+    <div class="color-reference">
+        <div class="color-reference-item">
+            <div class="color-dot role"></div>
+            <span>Roles</span>
+        </div>
+        <div class="color-reference-item">
+            <div class="color-dot tech"></div>
+            <span>Tecnologías</span>
+        </div>
+        <div class="color-reference-item">
+            <div class="color-dot skill"></div>
+            <span>Habilidades</span>
+        </div>
+        <div class="color-reference-item">
+            <div class="color-dot keyword"></div>
+            <span>Palabras clave</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

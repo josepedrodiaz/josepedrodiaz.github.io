@@ -25,10 +25,21 @@
     <nav class="bg-gradient-to-r from-blue-900 to-blue-800 p-4 fixed w-full z-50 shadow-lg">
         <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
             <a href="#home" class="text-2xl font-bold hover-scale" style="margin-left: 1rem;">Pedro Díaz</a>
-            <div>
-                <a href="#about" class="nav-link mr-6">About</a>
-                <a href="#experience" class="nav-link mr-6">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <div class="flex items-center gap-6">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <span class="lang-label active">EN</span>
+                    <label class="switch">
+                        <input type="checkbox" id="langSwitch">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="lang-label">ES</span>
+                </div>
+                <div>
+                    <a href="#about" class="nav-link mr-6">About</a>
+                    <a href="#experience" class="nav-link mr-6">Experience</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
