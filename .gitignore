@@ -33,3 +33,4 @@ build/
 # Cache directories
 .cache/
 .temp/ 
+.claude/settings.local.json
