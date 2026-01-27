@@ -28,7 +28,7 @@
     <div id="splash-screen" class="fixed w-full z-50">
         <div class="max-w-7xl mx-auto flex flex-col items-center justify-center h-full px-4">
             <div class="splash-text" style="margin-left: 1rem;">Pedro Díaz</div>
-            <div class="splash-tagline mt-4">Crafting Digital Experiences</div>
+            <div class="splash-tagline mt-4" data-i18n="hero.subtitle">Crafting Digital Experiences</div>
             <div class="loader-line mt-8"></div>
         </div>
     </div>
@@ -48,10 +48,10 @@
                     <span class="lang-label">ES</span>
                 </div>
                 <div>
-                    <a href="#about" class="nav-link mr-6">About</a>
-                    <a href="#portfolio" class="nav-link mr-6">Portfolio</a>
-                    <a href="#experience" class="nav-link mr-6">Experience</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#about" class="nav-link mr-6" data-i18n="nav.about">About</a>
+                    <a href="#portfolio" class="nav-link mr-6" data-i18n="nav.portfolio">Portfolio</a>
+                    <a href="#experience" class="nav-link mr-6" data-i18n="nav.experience">Experience</a>
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-8 text-center text-gray-800">About Me</h2>
+            <h2 class="text-4xl font-bold mb-8 text-center text-gray-800" data-i18n="about.title">About Me</h2>
             <div class="bg-gray-50 rounded-2xl p-8 shadow-lg hover-scale">
                 <p class="text-lg leading-relaxed text-gray-700">
                     I build robust, scalable web applications using WordPress, PHP, Laravel, and modern JavaScript frameworks. With 15+ years of full-stack experience, I specialize in developing custom WordPress solutions, RESTful APIs, and database-driven systems. I'm passionate about writing clean, maintainable code, implementing secure authentication systems, and delivering responsive, cross-browser compatible interfaces. I craft reliable backend architectures while ensuring seamless frontend user experiences.
@@ -93,8 +93,8 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-4 text-center text-gray-800">Featured Projects</h2>
-            <p class="text-center text-gray-600 mb-12 text-lg">Showcasing impactful work with mission-driven organizations</p>
+            <h2 class="text-4xl font-bold mb-4 text-center text-gray-800" data-i18n="portfolio.title">Featured Projects</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg" data-i18n="portfolio.subtitle">Showcasing impactful work with mission-driven organizations</p>
 
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Project 1: Clinton Foundation -->
@@ -227,7 +227,7 @@
     <!-- Experience Section -->
     <section id="experience" class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800">Experience</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-i18n="experience.title">Experience</h2>
 
             <div class="space-y-16">
                 <div class="bg-white rounded-2xl p-8 shadow-lg hover-scale">
@@ -326,7 +326,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center">Contact</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center" data-i18n="contact.title">Contact</h2>
             <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg">
                 <div class="space-y-6">
                     <p class="text-lg flex items-center">
@@ -351,6 +351,7 @@
         <p class="text-gray-400">&copy; <script>document.write(new Date().getFullYear());</script> Pedro Díaz.</p>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
