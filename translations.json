@@ -1,0 +1,50 @@
+{
+  "en": {
+    "nav": {
+      "about": "About",
+      "portfolio": "Portfolio",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
+    "hero": {
+      "subtitle": "Crafting Digital Experiences"
+    },
+    "about": {
+      "title": "About Me"
+    },
+    "portfolio": {
+      "title": "Featured Projects",
+      "subtitle": "Showcasing impactful work with mission-driven organizations"
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "es": {
+    "nav": {
+      "about": "Acerca de",
+      "portfolio": "Portafolio",
+      "experience": "Experiencia",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "subtitle": "Creando Experiencias Digitales"
+    },
+    "about": {
+      "title": "Acerca de Mí"
+    },
+    "portfolio": {
+      "title": "Proyectos Destacados",
+      "subtitle": "Mostrando trabajo impactante con organizaciones con misión"
+    },
+    "experience": {
+      "title": "Experiencia"
+    },
+    "contact": {
+      "title": "Contacto"
+    }
+  }
+}
