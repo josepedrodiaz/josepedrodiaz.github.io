@@ -4,11 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static personal portfolio website for Pedro Díaz, a Web Developer. The site is a single-page application built with vanilla JavaScript, HTML5, and CSS3, using Tailwind CSS via CDN for styling and Font Awesome for icons.
+This is a static personal portfolio website for Pedro Díaz, a Web Developer. The site is a single-page application built with vanilla JavaScript, HTML5, and CSS3, using Tailwind CSS with a build process for styling and Font Awesome for icons.
 
 ## Development Commands
 
-Since this is a static website with no build process, you can serve it locally using:
+### Building CSS
+
+This project uses Tailwind CSS v3 with a build process. Before serving the site, you need to build the CSS:
+
+```bash
+# Install dependencies (first time only)
+npm install
+
+# Build CSS for production (generates styles.css from src/input.css)
+npm run build
+
+# Watch for changes and rebuild automatically during development
+npm run watch
+```
+
+### Serving the Site Locally
+
+After building the CSS, you can serve the site locally using:
 
 ```bash
 # Using Python
@@ -20,14 +37,24 @@ npx serve
 
 Then open `http://localhost:8000` (or the port shown) in your browser.
 
+**Important**: Always run `npm run build` after making changes to:
+- `src/input.css` (source CSS file with Tailwind directives)
+- HTML files (if you add new Tailwind classes)
+- `tailwind.config.js` (Tailwind configuration)
+
 ## Architecture
 
 ### File Structure
 - `index.html` - Main HTML file containing all page sections (hero, about, experience, contact)
-- `script.js` - Interactive features including splash screen transition, smooth scrolling, language switcher, and keyword bubble animation system
-- `styles.css` - Custom styles including animations, transitions, and responsive design (shared by both EN and ES versions)
+- `script.js` - Interactive features including splash screen transition, smooth scrolling, language switcher, and expandable tags system
+- `styles.css` - **Generated file** - Compiled CSS output from Tailwind build process (DO NOT edit directly)
+- `src/input.css` - Source CSS file with Tailwind directives and custom styles
+- `tailwind.config.js` - Tailwind CSS configuration file
+- `postcss.config.js` - PostCSS configuration for Tailwind
+- `package.json` - Node.js dependencies and build scripts
 - `img/` - Image assets (profile photos, favicon)
 - `es/` - Spanish version of the site with translated content
+- `node_modules/` - Node dependencies (ignored by git)
 
 ### Bilingual Structure
 
