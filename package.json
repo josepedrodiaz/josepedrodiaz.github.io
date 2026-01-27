@@ -4,8 +4,9 @@
   "description": "A modern, interactive personal portfolio website showcasing my experience as a Web Developer.",
   "main": "script.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./styles.css",
+    "build": "npx tailwindcss -i ./src/input.css -o ./styles.css --minify",
     "watch": "npx tailwindcss -i ./src/input.css -o ./styles.css --watch",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./styles.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
