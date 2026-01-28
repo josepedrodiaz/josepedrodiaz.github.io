@@ -37,6 +37,14 @@
       "tcf": {
         "title": "The Century Foundation",
         "description": "Part of Radish Lab team that redesigned The New York Community Trust's digital platform. Contributed to developing responsive mega menu system, building modular component-based CMS architecture, and implementing WCAG AA accessibility standards while consolidating three regional websites into unified experience."
+      },
+      "proz": {
+        "title": "ProZ.com Platform",
+        "description": "Contributed to maintaining and enhancing ProZ.com, the world's largest community platform for translation professionals with over 1.6 million users. Worked on legacy codebase refactoring, implemented new features, improved performance, and maintained critical systems serving global translation industry."
+      },
+      "gba": {
+        "title": "Digital Records System - Buenos Aires Government",
+        "description": "Developed electronic records management system for the Ministry of Production of Buenos Aires Province. Built secure document workflow platform, implemented digital signatures, and created administrative interfaces for government officials to manage production and business development programs."
       }
     },
     "experience": {
@@ -84,6 +92,14 @@
       "tcf": {
         "title": "The Century Foundation",
         "description": "Parte del equipo de Radish Lab que rediseñó la plataforma digital de The New York Community Trust. Contribuí a desarrollar sistema de mega menú responsivo, construir arquitectura de CMS modular basada en componentes e implementar estándares de accesibilidad WCAG AA mientras consolidábamos tres sitios web regionales en una experiencia unificada."
+      },
+      "proz": {
+        "title": "Plataforma ProZ.com",
+        "description": "Contribuí al mantenimiento y mejora de ProZ.com, la comunidad más grande del mundo para profesionales de la traducción con más de 1.6 millones de usuarios. Trabajé en refactorización de código heredado, implementé nuevas funcionalidades, mejoré el rendimiento y mantuve sistemas críticos que sirven a la industria global de traducción."
+      },
+      "gba": {
+        "title": "Sistema de Expediente Electrónico - Gobierno de Buenos Aires",
+        "description": "Desarrollé sistema de gestión de expedientes electrónicos para el Ministerio de Producción de la Provincia de Buenos Aires. Construí plataforma segura de flujo de documentos, implementé firmas digitales y creé interfaces administrativas para funcionarios gubernamentales que gestionan programas de producción y desarrollo empresarial."
       }
     },
     "experience": {
