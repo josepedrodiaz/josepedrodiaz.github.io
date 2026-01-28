@@ -7,14 +7,37 @@
       "contact": "Contact"
     },
     "hero": {
-      "subtitle": "Crafting Digital Experiences"
+      "subtitle": "Crafting Digital Experiences",
+      "title": "Hello, I'm Pedro Díaz",
+      "subtitle-tech": "Senior Full-Stack Developer | WordPress • PHP • Laravel • JavaScript",
+      "available": "Available for work!",
+      "location": "Currently based in La Plata - Buenos Aires - Argentina"
     },
     "about": {
-      "title": "About Me"
+      "title": "About Me",
+      "content": "I build robust, scalable web applications using WordPress, PHP, Laravel, and modern JavaScript frameworks. With 15+ years of full-stack experience, I specialize in developing custom WordPress solutions, RESTful APIs, and database-driven systems. I'm passionate about writing clean, maintainable code, implementing secure authentication systems, and delivering responsive, cross-browser compatible interfaces. I craft reliable backend architectures while ensuring seamless frontend user experiences."
     },
     "portfolio": {
       "title": "Featured Projects",
-      "subtitle": "Showcasing impactful work with mission-driven organizations"
+      "subtitle": "Showcasing impactful work with mission-driven organizations",
+      "livesite": "Live Site",
+      "casestudy": "Case Study",
+      "clinton": {
+        "title": "Clinton Foundation Digital Platform",
+        "description": "Redesigned the Clinton Foundation's website to better communicate President Clinton's lifetime of public service. Built modular architecture with WCAG AA accessibility, custom mega menu, and thematic content organization. Created flexible design system enabling scalable content expansion across multiple program areas."
+      },
+      "red": {
+        "title": "(RED) Partnership Platform",
+        "description": "Refined (RED)'s Squarespace website to create a functional, adaptable platform for global health partnerships. Implemented human-centered content strategy, modular design system, and new donation platform integration. Included microsite development for digital summer festival with SEO optimization."
+      },
+      "wrc": {
+        "title": "Women's Refugee Commission",
+        "description": "Migrated WRC from Joomla to WordPress with improved information architecture and URL taxonomy. Rebuilt resource library with new tagging system for decades of publications. Implemented thematic organization around five core issues with simplified navigation and analytics tracking."
+      },
+      "equimundo": {
+        "title": "Equimundo Brand & Website",
+        "description": "Comprehensive rebrand and website redesign for Equimundo (formerly Promundo-US). Developed new visual identity with dispersed dot-pattern treatment conveying interconnectedness. Redesigned navigation taxonomy enabling multiple pathways to content discovery by thematic focus, audience, methodology, or region."
+      }
     },
     "experience": {
       "title": "Experience"
@@ -31,14 +54,37 @@
       "contact": "Contacto"
     },
     "hero": {
-      "subtitle": "Creando Experiencias Digitales"
+      "subtitle": "Creando Experiencias Digitales",
+      "title": "Hola, soy Pedro Díaz",
+      "subtitle-tech": "Desarrollador Full-Stack Senior | WordPress • PHP • Laravel • JavaScript",
+      "available": "¡Disponible para trabajar!",
+      "location": "Actualmente en La Plata - Buenos Aires - Argentina"
     },
     "about": {
-      "title": "Acerca de Mí"
+      "title": "Acerca de Mí",
+      "content": "Construyo aplicaciones web robustas y escalables usando WordPress, PHP, Laravel y frameworks JavaScript modernos. Con más de 15 años de experiencia full-stack, me especializo en desarrollar soluciones personalizadas de WordPress, APIs RESTful y sistemas basados en bases de datos. Me apasiona escribir código limpio y mantenible, implementar sistemas de autenticación seguros y entregar interfaces responsivas y compatibles con todos los navegadores. Creo arquitecturas backend confiables mientras aseguro experiencias frontend fluidas."
     },
     "portfolio": {
       "title": "Proyectos Destacados",
-      "subtitle": "Mostrando trabajo impactante con organizaciones con misión"
+      "subtitle": "Mostrando trabajo impactante con organizaciones con misión",
+      "livesite": "Ver Sitio",
+      "casestudy": "Caso de Estudio",
+      "clinton": {
+        "title": "Plataforma Digital Clinton Foundation",
+        "description": "Rediseñé el sitio web de la Fundación Clinton para comunicar mejor la vida de servicio público del Presidente Clinton. Construí una arquitectura modular con accesibilidad WCAG AA, mega menú personalizado y organización de contenido temático. Creé un sistema de diseño flexible que permite la expansión escalable del contenido a través de múltiples áreas de programa."
+      },
+      "red": {
+        "title": "Plataforma de Partnerships (RED)",
+        "description": "Refiné el sitio Squarespace de (RED) para crear una plataforma funcional y adaptable para alianzas de salud global. Implementé una estrategia de contenido centrada en el ser humano, sistema de diseño modular e integración de nueva plataforma de donaciones. Incluye desarrollo de micrositio para festival digital de verano con optimización SEO."
+      },
+      "wrc": {
+        "title": "Women's Refugee Commission",
+        "description": "Migré WRC de Joomla a WordPress con arquitectura de información mejorada y taxonomía de URL. Reconstruí la biblioteca de recursos con nuevo sistema de etiquetado para décadas de publicaciones. Implementé organización temática alrededor de cinco temas centrales con navegación simplificada y seguimiento de analytics."
+      },
+      "equimundo": {
+        "title": "Marca y Sitio Web Equimundo",
+        "description": "Rebrand integral y rediseño de sitio web para Equimundo (anteriormente Promundo-US). Desarrollé nueva identidad visual con tratamiento de patrón de puntos dispersos que transmite interconexión. Rediseñé la taxonomía de navegación permitiendo múltiples caminos para el descubrimiento de contenido por enfoque temático, audiencia, metodología o región."
+      }
     },
     "experience": {
       "title": "Experiencia"

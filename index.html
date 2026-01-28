@@ -67,13 +67,13 @@
                         <img src="img/josepedrodiaz.png" alt="Pedro Díaz" class="rounded-full h-40 w-40 object-cover border-4 border-white shadow-xl hover-scale" loading="lazy">
                     </picture>
                 </div>
-                <h1 class="text-5xl font-extrabold mb-6">Hello, I'm Pedro Díaz</h1>
-                <p class="text-xl mb-10 text-blue-100">Senior Full-Stack Developer | WordPress • PHP • Laravel • JavaScript</p>
+                <h1 class="text-5xl font-extrabold mb-6" data-i18n="hero.title">Hello, I'm Pedro Díaz</h1>
+                <p class="text-xl mb-10 text-blue-100" data-i18n="hero.subtitle-tech">Senior Full-Stack Developer | WordPress • PHP • Laravel • JavaScript</p>
                 <a href="#contact" class="status-badge">
                     <span class="status-dot"></span>
-                    Available for work!
+                    <span data-i18n="hero.available">Available for work!</span>
                 </a>
-                <p class="location-text">Currently based in La Plata - Buenos Aires - Argentina</p>
+                <p class="location-text" data-i18n="hero.location">Currently based in La Plata - Buenos Aires - Argentina</p>
             </div>
         </div>
     </section>
@@ -83,7 +83,7 @@
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-4xl font-bold mb-8 text-center text-gray-800" data-i18n="about.title">About Me</h2>
             <div class="bg-gray-50 rounded-2xl p-8 shadow-lg hover-scale">
-                <p class="text-lg leading-relaxed text-gray-700">
+                <p class="text-lg leading-relaxed text-gray-700" data-i18n="about.content">
                     I build robust, scalable web applications using WordPress, PHP, Laravel, and modern JavaScript frameworks. With 15+ years of full-stack experience, I specialize in developing custom WordPress solutions, RESTful APIs, and database-driven systems. I'm passionate about writing clean, maintainable code, implementing secure authentication systems, and delivering responsive, cross-browser compatible interfaces. I craft reliable backend architectures while ensuring seamless frontend user experiences.
                 </p>
             </div>
@@ -106,8 +106,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Clinton Foundation Digital Platform</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="portfolio.clinton.title">Clinton Foundation Digital Platform</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed" data-i18n="portfolio.clinton.description">
                             Redesigned the Clinton Foundation's website to better communicate President Clinton's lifetime of public service. Built modular architecture with WCAG AA accessibility, custom mega menu, and thematic content organization. Created flexible design system enabling scalable content expansion across multiple program areas.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -119,10 +119,10 @@
                         </div>
                         <div class="flex gap-3">
                             <a href="https://www.clintonfoundation.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-external-link-alt"></i> Live Site
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
                             <a href="https://radishlab.com/work/creating-a-new-digital-home-for-a-world-class-philanthropy-and-presidential-center/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-info-circle"></i> Case Study
+                                <i class="fas fa-info-circle"></i> <span data-i18n="portfolio.casestudy">Case Study</span>
                             </a>
                         </div>
                     </div>
@@ -137,8 +137,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">(RED) Partnership Platform</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="portfolio.red.title">(RED) Partnership Platform</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed" data-i18n="portfolio.red.description">
                             Refined (RED)'s Squarespace website to create a functional, adaptable platform for global health partnerships. Implemented human-centered content strategy, modular design system, and new donation platform integration. Included microsite development for digital summer festival with SEO optimization.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -150,10 +150,10 @@
                         </div>
                         <div class="flex gap-3">
                             <a href="https://www.red.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-external-link-alt"></i> Live Site
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
                             <a href="https://radishlab.com/work/ending-pandemics-through-strategic-partnerships/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-info-circle"></i> Case Study
+                                <i class="fas fa-info-circle"></i> <span data-i18n="portfolio.casestudy">Case Study</span>
                             </a>
                         </div>
                     </div>
@@ -168,8 +168,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Women's Refugee Commission</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="portfolio.wrc.title">Women's Refugee Commission</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed" data-i18n="portfolio.wrc.description">
                             Migrated WRC from Joomla to WordPress with improved information architecture and URL taxonomy. Rebuilt resource library with new tagging system for decades of publications. Implemented thematic organization around five core issues with simplified navigation and analytics tracking.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -181,10 +181,10 @@
                         </div>
                         <div class="flex gap-3">
                             <a href="https://www.womensrefugeecommission.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-external-link-alt"></i> Live Site
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
                             <a href="https://radishlab.com/work/brand-strategy-womens-refugee-commission/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-info-circle"></i> Case Study
+                                <i class="fas fa-info-circle"></i> <span data-i18n="portfolio.casestudy">Case Study</span>
                             </a>
                         </div>
                     </div>
@@ -199,8 +199,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Equimundo Brand & Website</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="portfolio.equimundo.title">Equimundo Brand & Website</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed" data-i18n="portfolio.equimundo.description">
                             Comprehensive rebrand and website redesign for Equimundo (formerly Promundo-US). Developed new visual identity with dispersed dot-pattern treatment conveying interconnectedness. Redesigned navigation taxonomy enabling multiple pathways to content discovery by thematic focus, audience, methodology, or region.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -212,10 +212,10 @@
                         </div>
                         <div class="flex gap-3">
                             <a href="https://www.equimundo.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-external-link-alt"></i> Live Site
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
                             <a href="https://radishlab.com/work/branding-equimundo/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800 font-medium flex items-center gap-2">
-                                <i class="fas fa-info-circle"></i> Case Study
+                                <i class="fas fa-info-circle"></i> <span data-i18n="portfolio.casestudy">Case Study</span>
                             </a>
                         </div>
                     </div>

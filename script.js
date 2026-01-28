@@ -1,32 +1,4 @@
-// Language Switcher
-document.addEventListener('DOMContentLoaded', () => {
-    const langSwitch = document.getElementById('langSwitch');
-    const langLabels = document.querySelectorAll('.lang-label');
-
-    if (langSwitch) {
-        langSwitch.addEventListener('change', function() {
-            if (this.checked) {
-                // Switch to Spanish
-                window.location.href = '/es/index.html';
-            } else {
-                // Switch back to English (in case we're somehow on ES page)
-                window.location.href = '/index.html';
-            }
-        });
-    }
-
-    // Update active label styling and handle clicks
-    langLabels.forEach(label => {
-        label.addEventListener('click', function() {
-            const labelText = this.textContent.trim();
-            if (labelText === 'ES') {
-                window.location.href = '/es/index.html';
-            } else if (labelText === 'EN') {
-                window.location.href = '/index.html';
-            }
-        });
-    });
-});
+// Language Switcher is now handled by i18n.js
 
 // Splash Screen Control
 document.addEventListener('DOMContentLoaded', () => {
