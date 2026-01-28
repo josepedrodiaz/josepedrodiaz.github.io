@@ -24,19 +24,19 @@
       "casestudy": "Case Study",
       "clinton": {
         "title": "Clinton Foundation Digital Platform",
-        "description": "Redesigned the Clinton Foundation's website to better communicate President Clinton's lifetime of public service. Built modular architecture with WCAG AA accessibility, custom mega menu, and thematic content organization. Created flexible design system enabling scalable content expansion across multiple program areas."
+        "description": "As part of Radish Lab's development team, contributed to redesigning the Clinton Foundation's website. Implemented modular WordPress architecture with WCAG AA accessibility standards, custom mega menu navigation, and flexible content management system supporting multiple program areas."
       },
       "red": {
         "title": "(RED) Partnership Platform",
-        "description": "Refined (RED)'s Squarespace website to create a functional, adaptable platform for global health partnerships. Implemented human-centered content strategy, modular design system, and new donation platform integration. Included microsite development for digital summer festival with SEO optimization."
+        "description": "Collaborated with Radish Lab team to refine (RED)'s Squarespace platform for global health partnerships. Developed custom JavaScript modules, integrated donation systems with performance optimization and SEO best practices."
       },
       "wrc": {
         "title": "Women's Refugee Commission",
-        "description": "Migrated WRC from Joomla to WordPress with improved information architecture and URL taxonomy. Rebuilt resource library with new tagging system for decades of publications. Implemented thematic organization around five core issues with simplified navigation and analytics tracking."
+        "description": "Part of Radish Lab team that migrated WRC from Joomla to WordPress. Contributed to rebuilding the resource library with custom post types and advanced taxonomy, implemented thematic navigation architecture, and integrated analytics tracking for decades of advocacy publications."
       },
-      "equimundo": {
-        "title": "Equimundo Brand & Website",
-        "description": "Comprehensive rebrand and website redesign for Equimundo (formerly Promundo-US). Developed new visual identity with dispersed dot-pattern treatment conveying interconnectedness. Redesigned navigation taxonomy enabling multiple pathways to content discovery by thematic focus, audience, methodology, or region."
+      "tcf": {
+        "title": "The Century Foundation",
+        "description": "Part of Radish Lab team that redesigned The New York Community Trust's digital platform. Contributed to developing responsive mega menu system, building modular component-based CMS architecture, and implementing WCAG AA accessibility standards while consolidating three regional websites into unified experience."
       }
     },
     "experience": {
@@ -71,19 +71,19 @@
       "casestudy": "Caso de Estudio",
       "clinton": {
         "title": "Plataforma Digital Clinton Foundation",
-        "description": "Rediseñé el sitio web de la Fundación Clinton para comunicar mejor la vida de servicio público del Presidente Clinton. Construí una arquitectura modular con accesibilidad WCAG AA, mega menú personalizado y organización de contenido temático. Creé un sistema de diseño flexible que permite la expansión escalable del contenido a través de múltiples áreas de programa."
+        "description": "Como parte del equipo de desarrollo de Radish Lab, contribuí al rediseño del sitio web de la Fundación Clinton. Implementé arquitectura modular en WordPress con estándares de accesibilidad WCAG AA, navegación con mega menú personalizado y sistema de gestión de contenidos flexible para múltiples áreas de programa."
       },
       "red": {
         "title": "Plataforma de Partnerships (RED)",
-        "description": "Refiné el sitio Squarespace de (RED) para crear una plataforma funcional y adaptable para alianzas de salud global. Implementé una estrategia de contenido centrada en el ser humano, sistema de diseño modular e integración de nueva plataforma de donaciones. Incluye desarrollo de micrositio para festival digital de verano con optimización SEO."
+        "description": "Colaboré con el equipo de Radish Lab para refinar la plataforma Squarespace de (RED) para alianzas de salud global. Desarrollé módulos JavaScript personalizados, integré sistemas de donaciones con optimización de rendimiento y mejores prácticas de SEO."
       },
       "wrc": {
         "title": "Women's Refugee Commission",
-        "description": "Migré WRC de Joomla a WordPress con arquitectura de información mejorada y taxonomía de URL. Reconstruí la biblioteca de recursos con nuevo sistema de etiquetado para décadas de publicaciones. Implementé organización temática alrededor de cinco temas centrales con navegación simplificada y seguimiento de analytics."
+        "description": "Parte del equipo de Radish Lab que migró WRC de Joomla a WordPress. Contribuí a reconstruir la biblioteca de recursos con custom post types y taxonomía avanzada, implementé arquitectura de navegación temática e integré seguimiento de analytics para décadas de publicaciones de incidencia."
       },
-      "equimundo": {
-        "title": "Marca y Sitio Web Equimundo",
-        "description": "Rebrand integral y rediseño de sitio web para Equimundo (anteriormente Promundo-US). Desarrollé nueva identidad visual con tratamiento de patrón de puntos dispersos que transmite interconexión. Rediseñé la taxonomía de navegación permitiendo múltiples caminos para el descubrimiento de contenido por enfoque temático, audiencia, metodología o región."
+      "tcf": {
+        "title": "The Century Foundation",
+        "description": "Parte del equipo de Radish Lab que rediseñó la plataforma digital de The New York Community Trust. Contribuí a desarrollar sistema de mega menú responsivo, construir arquitectura de CMS modular basada en componentes e implementar estándares de accesibilidad WCAG AA mientras consolidábamos tres sitios web regionales en una experiencia unificada."
       }
     },
     "experience": {
