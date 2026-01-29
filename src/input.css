@@ -7,10 +7,12 @@
 
 html {
     scroll-behavior: smooth;
+    overscroll-behavior-y: none;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
+    overscroll-behavior-y: none;
 }
 
 .hover-scale {
