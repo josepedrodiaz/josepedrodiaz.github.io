@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+**General Instructions**: See `~/.claude-instructions.md` for git workflow, versioning, and general coding conventions that apply to all Pedro Díaz's personal projects.
+
 ## Project Overview
 
 This is a static personal portfolio website for Pedro Díaz, a Web Developer. The site is a single-page application built with vanilla JavaScript, HTML5, and CSS3, using Tailwind CSS with a build process for styling and Font Awesome for icons.
@@ -45,34 +47,48 @@ Then open `http://localhost:8000` (or the port shown) in your browser.
 ## Architecture
 
 ### File Structure
-- `index.html` - Main HTML file containing all page sections (hero, about, experience, contact)
-- `script.js` - Interactive features including splash screen transition, smooth scrolling, language switcher, and expandable tags system
+- `index.html` - Main HTML file containing all page sections with data-i18n attributes for translations
+- `script.js` - Interactive features including splash screen transition, smooth scrolling, mobile menu toggle
+- `i18n.js` - Internationalization module for handling English/Spanish translations
+- `translations.json` - All bilingual content (EN/ES) in structured JSON format
 - `styles.css` - **Generated file** - Compiled CSS output from Tailwind build process (DO NOT edit directly)
 - `src/input.css` - Source CSS file with Tailwind directives and custom styles
 - `tailwind.config.js` - Tailwind CSS configuration file
 - `postcss.config.js` - PostCSS configuration for Tailwind
 - `package.json` - Node.js dependencies and build scripts
-- `img/` - Image assets (profile photos, favicon)
-- `es/` - Spanish version of the site with translated content
+- `img/` - Image assets (profile photos, portfolio images, favicon)
 - `node_modules/` - Node dependencies (ignored by git)
 
-### Bilingual Structure
+### Bilingual Structure (Single-File Architecture)
 
-The site supports English and Spanish versions:
-- **English**: Root directory (`/index.html`, `/script.js`)
-- **Spanish**: `/es/` directory (`/es/index.html`, `/es/script.js`)
-- **Shared**: `styles.css` is referenced from both versions using relative paths
-- **Language switcher**: Toggle button in navigation switches between versions by changing URLs
+The site uses a **single-file architecture** with JavaScript-based i18n system:
+- **One HTML file**: `index.html` with `data-i18n` attributes on translatable elements
+- **Translations**: All content in `translations.json` with nested keys (e.g., `hero.title`, `portfolio.clinton.description`)
+- **Language switcher**: Toggle in navigation (desktop) and mobile menu syncs both switchers
+- **State persistence**: Language preference saved in `localStorage` and URL parameter (`?lang=es`)
+- **i18n.js module**: Handles language switching, content updates, and nested translation key resolution
 
-The Spanish version has identical structure and functionality but with translated content. When adding new features or experience entries, update both versions to maintain consistency.
+When adding new content:
+1. Add `data-i18n="section.key"` attribute to HTML elements
+2. Add translations in `translations.json` under both `en` and `es` objects
+3. Use nested structure for organization (e.g., `portfolio.projectname.title`)
 
 ### Key Interactive Features
 
-**Language Switcher (script.js, top of file)**
-A toggle button in the navigation bar allows switching between English and Spanish versions. The switcher changes the page URL:
-- EN version: Setting `langSwitch.checked = true` navigates to `/es/index.html`
-- ES version: Setting `langSwitch.checked = false` navigates to `../index.html`
-- Active language label is styled with full opacity while inactive has reduced opacity
+**Mobile Menu Toggle (script.js)**
+Hamburger menu for mobile devices (< 768px) that includes:
+- Navigation links that close the menu when clicked
+- Language switcher synchronized with desktop version
+- Click-outside detection to close menu
+- Smooth transitions for menu visibility
+
+**Language Switcher (i18n.js)**
+The i18n module handles bilingual content switching:
+- Desktop and mobile toggles synchronized
+- Updates all elements with `data-i18n` attributes
+- Persists preference in `localStorage`
+- Updates URL with `?lang=es` parameter
+- Resolves nested translation keys (e.g., `hero.title` → `translations.en.hero.title`)
 
 **Splash Screen Transition (script.js, search "Splash Screen Control")**
 The site features an animated splash screen that transforms into the navigation bar after 2 seconds. The splash screen prevents scrolling during the animation and uses CSS keyframes for the transformation effect. The transition includes:
@@ -81,20 +97,12 @@ The site features an animated splash screen that transforms into the navigation 
 - Loading line animation
 - Smooth transformation to navigation bar
 
-**Experience Card Keyword Bubbles (script.js, search "experienceKeywords")**
-The most complex feature: interactive keyword bubbles that appear when hovering or touching experience cards. Each position has a predefined set of keywords categorized by type:
-- `role` - Job titles (red: #FF6B6B)
-- `tech` - Technologies (cyan: #00FFFF)
-- `skill` - Skills (pale green: #98FB98)
-- `keyword` - Context/industry (yellow: #FFD700)
-
-The bubble system includes:
-- Throttling (150ms interval) and max 10 concurrent bubbles for smooth, fluid animation
-- Smart mobile positioning (bubbles appear opposite to touch location to avoid finger obstruction)
-- Scroll detection to prevent bubbles during scrolling gestures
-- Color-coded reference box that slides in from the right (desktop) or left (mobile) when interacting with cards
-- Water ripple effect at bubble spawn points for visual feedback
-- Auto-hide reference box after 5 seconds of inactivity
+**Experience Card Features (script.js)**
+Experience cards have expandable tags sections with keyword categorization:
+- Color-coded keyword chips: role (red), tech (cyan), skill (green), context (yellow)
+- Expandable/collapsible tags section with smooth transitions
+- Category organization with counts
+- Note: Bubble animation system exists in code but is not currently active
 
 **Smooth Scrolling Navigation (script.js, search "Smooth scroll for navigation")**
 All navigation links with `href^="#"` have smooth scroll behavior to improve user experience when navigating between sections.
@@ -109,44 +117,38 @@ All navigation links with `href^="#"` have smooth scroll behavior to improve use
 - All animations use `will-change` for performance optimization
 - Mobile breakpoint at 768px (primary responsive breakpoint)
 
-### Adding New Experience Entries
+### Adding New Portfolio Projects
 
-When adding a new job to the experience section:
+When adding a new project to the portfolio section:
 
-1. Add the HTML card in `index.html` following the existing pattern (within the `#experience` section)
-2. Add the keyword array to the `experienceKeywords` object in `script.js` using the exact company name from the h3 title (the text before the " - " separator)
-3. Use the color-coded span format: `<span class="role">`, `<span class="tech">`, `<span class="skill">`, `<span class="keyword">`
-4. Repeat steps 1-3 for the Spanish version (`es/index.html` and `es/script.js`) with translated keywords
-
-Example keyword entry:
-```javascript
-'Company Name': [
-    '<span class="role">Job Title</span>',
-    '<span class="tech">Technology Name</span>',
-    '<span class="skill">Skill Name</span>',
-    '<span class="keyword">Industry Context</span>'
-]
-```
+1. Add project card HTML in `index.html` within `#portfolio` section
+2. Add project image in `img/portfolio/` directory
+3. Add translations in `translations.json`:
+   - `en.portfolio.projectname.title`
+   - `en.portfolio.projectname.description`
+   - `es.portfolio.projectname.title`
+   - `es.portfolio.projectname.description`
+4. Add `data-i18n` attributes to title and description elements
+5. Follow existing pattern for image, links, and responsive layout
 
 ### Mobile Behavior
 
 The site is fully responsive with specific mobile optimizations:
-- **Touch events**: Touch detection with scroll gesture recognition to prevent bubbles during scrolling movements
-- **Reference box position**: Slides from left instead of right on mobile devices (easier reach)
-- **Smart bubble positioning**: Bubbles appear opposite to touch point (left/right based on touch location) to avoid finger obstruction
-- **Typography**: Smaller font sizes and reduced padding on mobile devices for better content density
-- **Animation duration**: Longer bubble animation (4s mobile vs 3s desktop) for better visibility on smaller screens
+- **Hamburger menu**: Navigation collapses to hamburger menu on screens < 768px
+- **Touch-friendly**: Large tap targets for mobile interaction
+- **Typography**: Smaller font sizes and reduced padding on mobile devices
 - **Mobile breakpoint**: 768px is the primary responsive breakpoint throughout the site
-- **Touch highlight**: Disabled via `-webkit-tap-highlight-color: transparent` for cleaner UX
-- **Text selection**: Disabled on experience cards to prevent accidental selection during interaction
+- **Responsive images**: All portfolio images scale appropriately
+- **Smooth scroll**: Works across all devices
 
 ### Performance Optimizations
 
-- `will-change` property used on animated elements (bubbles, cards)
-- Bubble throttling with 300ms interval and max 5 concurrent bubbles
 - Lazy loading for images with `loading="lazy"` attribute
 - WebP format with PNG fallback for profile photos
-- CDN-hosted external libraries (Tailwind CSS, Font Awesome)
+- Minified CSS output from Tailwind build process
+- CDN-hosted Font Awesome icons
+- Smooth scroll with CSS `scroll-behavior: smooth`
+- Prevented overscroll bounce with `overscroll-behavior-y: none`
 
 ## Branch Information
 
