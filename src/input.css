@@ -431,6 +431,7 @@ body {
     font-weight: 300;
     text-align: center;
     opacity: 0;
+    margin-bottom: 2rem;
 }
 
 .splash-tagline.transforming {
