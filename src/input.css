@@ -565,6 +565,25 @@ input:checked + .slider:before {
     transform: translateX(20px);
 }
 
+/* Mobile Menu */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link {
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+}
+
+.mobile-nav-link::after {
+    display: none;
+}
+
 /* Mobile adjustments for language switcher */
 @media (max-width: 768px) {
     .language-switcher {
