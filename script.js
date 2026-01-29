@@ -1,5 +1,47 @@
 // Language Switcher is now handled by i18n.js
 
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when a link is clicked
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+
+    // Sync language switchers (desktop and mobile)
+    const langSwitchDesktop = document.getElementById('langSwitch');
+    const langSwitchMobile = document.getElementById('langSwitchMobile');
+
+    if (langSwitchDesktop && langSwitchMobile) {
+        langSwitchDesktop.addEventListener('change', (e) => {
+            langSwitchMobile.checked = e.target.checked;
+        });
+
+        langSwitchMobile.addEventListener('change', (e) => {
+            langSwitchDesktop.checked = e.target.checked;
+            // Trigger change event on desktop switcher to activate i18n
+            langSwitchDesktop.dispatchEvent(new Event('change'));
+        });
+    }
+});
+
 // Splash Screen Control
 document.addEventListener('DOMContentLoaded', () => {
     const splashScreen = document.getElementById('splash-screen');
