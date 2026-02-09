@@ -29,6 +29,7 @@ build/
 .env
 .env.local
 .env.*.local
+env.local.js
 
 # Cache directories
 .cache/

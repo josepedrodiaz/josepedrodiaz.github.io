@@ -414,5 +414,19 @@
 
     <script src="i18n.js"></script>
     <script src="script.js"></script>
+
+    <!-- React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel Standalone for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Environment config (env.local.js overrides for local dev) -->
+    <script src="env.js"></script>
+    <script src="env.local.js" onerror=""></script>
+
+    <!-- AI Chatbot Widget -->
+    <script type="text/babel" src="chatbot/ChatbotWidget.jsx"></script>
 </body>
 </html>
