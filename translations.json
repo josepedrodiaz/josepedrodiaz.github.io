@@ -19,7 +19,6 @@
     },
     "portfolio": {
       "title": "Featured Projects",
-      "subtitle": "Showcasing impactful work with mission-driven organizations",
       "livesite": "Live Site",
       "casestudy": "Case Study",
       "clinton": {
@@ -74,7 +73,6 @@
     },
     "portfolio": {
       "title": "Proyectos Destacados",
-      "subtitle": "Mostrando trabajo impactante con organizaciones con misión",
       "livesite": "Ver Sitio",
       "casestudy": "Caso de Estudio",
       "clinton": {
