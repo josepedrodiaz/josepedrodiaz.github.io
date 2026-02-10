@@ -6,6 +6,14 @@
 
 const { useState, useEffect, useRef } = React;
 
+const SparklesIcon = ({ size = 16, color = 'currentColor' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 2L11.1 6.9L16 8L11.1 9.1L10 14L8.9 9.1L4 8L8.9 6.9L10 2Z" />
+    <path d="M18 10L18.7 12.3L21 13L18.7 13.7L18 16L17.3 13.7L15 13L17.3 12.3L18 10Z" />
+    <path d="M15 17L15.5 18.5L17 19L15.5 19.5L15 21L14.5 19.5L13 19L14.5 18.5L15 17Z" />
+  </svg>
+);
+
 const ChatbotWidget = ({
   apiEndpoint = window.__ENV__?.CHATBOT_API_URL || 'https://cv-chatbot-api.vercel.app/api/chat',
   healthEndpoint = window.__ENV__?.CHATBOT_HEALTH_URL || 'https://cv-chatbot-api.vercel.app/api/health',
@@ -22,7 +30,7 @@ const ChatbotWidget = ({
   const translations = {
     en: {
       title: 'AI Assistant',
-      subtitle: 'Powered by AI',
+      subtitle: 'Powered by Google Gemini & Vercel',
       placeholder: 'Ask about my skills, experience...',
       send: 'Send',
       thinking: 'Thinking...',
@@ -30,11 +38,12 @@ const ChatbotWidget = ({
       welcome: "Hi! I'm Pedro's AI assistant. Ask me about his skills, experience, or projects!",
       closeAria: 'Close chat',
       openAria: 'Open chat',
+      tooltip: 'Ask AI about my profile',
       minimize: 'Minimize'
     },
     es: {
       title: 'Asistente IA',
-      subtitle: 'Inteligencia artificial',
+      subtitle: 'Powered by Google Gemini & Vercel',
       placeholder: 'Pregunta sobre mis habilidades, experiencia...',
       send: 'Enviar',
       thinking: 'Pensando...',
@@ -42,6 +51,7 @@ const ChatbotWidget = ({
       welcome: '¡Hola! Soy el asistente IA de Pedro. ¡Pregúntame sobre sus habilidades, experiencia o proyectos!',
       closeAria: 'Cerrar chat',
       openAria: 'Abrir chat',
+      tooltip: 'Pregúntale a la IA sobre mi perfil',
       minimize: 'Minimizar'
     }
   };
@@ -52,23 +62,49 @@ const ChatbotWidget = ({
   const styles = {
     container: {
       position: 'fixed',
-      bottom: '20px',
-      right: '20px',
+      bottom: '24px',
+      right: '24px',
       zIndex: 9999,
       fontFamily: 'inherit'
     },
-    toggleBtn: {
-      width: '56px',
-      height: '56px',
-      borderRadius: '50%',
+    toggleWrapper: {
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-end',
+      gap: '10px'
+    },
+    tooltip: {
       background: '#141416',
       border: '1px solid #27272a',
-      cursor: 'pointer',
+      borderRadius: '12px',
+      padding: '8px 14px',
+      color: '#d4d4d8',
+      fontSize: '13px',
+      fontWeight: '500',
+      whiteSpace: 'nowrap',
       boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
+      animation: 'fadeIn 0.5s ease-out 1s both',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '6px'
+    },
+    tooltipSparkle: {
+      color: '#a78bfa',
+      flexShrink: 0
+    },
+    toggleBtn: {
+      width: '64px',
+      height: '64px',
+      borderRadius: '50%',
+      background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
+      border: '2px solid rgba(167, 139, 250, 0.3)',
+      cursor: 'pointer',
+      boxShadow: '0 4px 24px rgba(124, 58, 237, 0.4)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: '#a78bfa',
+      color: 'white',
       fontSize: '22px',
       transition: 'all 0.3s ease'
     },
@@ -99,10 +135,6 @@ const ChatbotWidget = ({
       display: 'flex',
       alignItems: 'center',
       gap: '8px'
-    },
-    sparkleIcon: {
-      fontSize: '16px',
-      color: '#a78bfa'
     },
     title: {
       fontSize: '16px',
@@ -370,15 +402,21 @@ const ChatbotWidget = ({
     <div style={styles.container}>
       {/* Toggle Button */}
       {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          aria-label={t.openAria}
-          style={styles.toggleBtn}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.borderColor = '#a78bfa'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.borderColor = '#27272a'; }}
-        >
-          <i className="fas fa-wand-magic-sparkles"></i>
-        </button>
+        <div style={styles.toggleWrapper}>
+          <div style={styles.tooltip}>
+            <span style={styles.tooltipSparkle}><SparklesIcon size={14} color="#a78bfa" /></span>
+            {t.tooltip}
+          </div>
+          <button
+            onClick={() => setIsOpen(true)}
+            aria-label={t.openAria}
+            style={styles.toggleBtn}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.boxShadow = '0 6px 32px rgba(124, 58, 237, 0.6)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(124, 58, 237, 0.4)'; }}
+          >
+            <SparklesIcon size={26} />
+          </button>
+        </div>
       )}
 
       {/* Chat Window */}
@@ -388,7 +426,7 @@ const ChatbotWidget = ({
           <div style={styles.header}>
             <div>
               <div style={styles.titleWrapper}>
-                <i className="fas fa-wand-magic-sparkles" style={styles.sparkleIcon}></i>
+                <SparklesIcon size={18} color="#a78bfa" />
                 <h3 style={styles.title}>{t.title}</h3>
               </div>
               <div style={styles.subtitle}>{t.subtitle}</div>
@@ -430,7 +468,7 @@ const ChatbotWidget = ({
                   ...styles.avatar,
                   ...(msg.type === 'bot' ? styles.avatarBot : styles.avatarUser)
                 }}>
-                  <i className={`fas ${msg.type === 'bot' ? 'fa-wand-magic-sparkles' : 'fa-user'}`}></i>
+                  {msg.type === 'bot' ? <SparklesIcon size={16} /> : <i className="fas fa-user"></i>}
                 </div>
 
                 {/* Message Content */}
@@ -446,8 +484,8 @@ const ChatbotWidget = ({
             {/* Thinking Indicator */}
             {isLoading && (
               <div style={styles.message}>
-                <div style={styles.avatarBot}>
-                  <i className="fas fa-wand-magic-sparkles"></i>
+                <div style={{...styles.avatar, ...styles.avatarBot}}>
+                  <SparklesIcon size={16} />
                 </div>
                 <div style={{...styles.messageContent, ...styles.messageContentBot, padding: '16px'}}>
                   <div style={styles.typingIndicator}>
