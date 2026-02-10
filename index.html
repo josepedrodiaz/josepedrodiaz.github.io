@@ -519,9 +519,10 @@
     <!-- Environment config -->
     <script src="env.js"></script>
     <script>
-    // Load local dev overrides only on localhost (env.local.js is gitignored, avoids 404 in production)
+    // Local dev overrides: only load on localhost, merge instead of overwrite
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      document.write('<script src="env.local.js"><\/script>');
+      var x = new XMLHttpRequest(); x.open('GET', 'env.local.js', false);
+      try { x.send(); if (x.status === 200) eval(x.responseText); } catch(e) {}
     }
     </script>
 
