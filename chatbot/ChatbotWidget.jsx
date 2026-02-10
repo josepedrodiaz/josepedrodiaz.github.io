@@ -6,11 +6,15 @@
 
 const { useState, useEffect, useRef } = React;
 
-const ChatbotWidget = ({ apiEndpoint = window.__ENV__?.CHATBOT_API_URL || 'https://cv-chatbot-api.vercel.app/api/chat' }) => {
+const ChatbotWidget = ({
+  apiEndpoint = window.__ENV__?.CHATBOT_API_URL || 'https://cv-chatbot-api.vercel.app/api/chat',
+  healthEndpoint = window.__ENV__?.CHATBOT_HEALTH_URL || 'https://cv-chatbot-api.vercel.app/api/health',
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isAvailable, setIsAvailable] = useState(false);
   const [language, setLanguage] = useState('en');
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
@@ -238,6 +242,13 @@ const ChatbotWidget = ({ apiEndpoint = window.__ENV__?.CHATBOT_API_URL || 'https
     return cleanup;
   }, []);
 
+  // Health check: only show widget if API is available
+  useEffect(() => {
+    fetch(healthEndpoint, { method: 'GET' })
+      .then(res => setIsAvailable(res.ok))
+      .catch(() => setIsAvailable(false));
+  }, []);
+
   // Initialize with welcome message
   useEffect(() => {
     setMessages([
@@ -332,6 +343,8 @@ const ChatbotWidget = ({ apiEndpoint = window.__ENV__?.CHATBOT_API_URL || 'https
       sendMessage();
     }
   };
+
+  if (!isAvailable) return null;
 
   return (
     <div style={styles.container}>
