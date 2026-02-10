@@ -319,6 +319,18 @@
             <div class="space-y-5 reveal-stagger">
                 <div class="experience-card p-6 md:p-8 reveal">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                        <h3 class="text-xl font-display font-700 text-zinc-100" data-i18n="experience.freelance.title">Freelance WordPress & AI Developer</h3>
+                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2026 &mdash; Present</span>
+                    </div>
+                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>La Plata, Argentina</p>
+                    <ul class="space-y-2 text-sm text-zinc-400">
+                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px]"><i class="fas fa-circle"></i></span><span data-i18n="experience.freelance.item1">WordPress custom development, theme and plugin building for clients</span></li>
+                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px]"><i class="fas fa-circle"></i></span><span data-i18n="experience.freelance.item2">AI integration with Google Gemini API, serverless architectures on Vercel</span></li>
+                    </ul>
+                </div>
+
+                <div class="experience-card p-6 md:p-8 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                         <h3 class="text-xl font-display font-700 text-zinc-100">Radish Lab - Full Stack Developer</h3>
                         <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2021 &mdash; 2026</span>
                     </div>
@@ -504,14 +516,11 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-    <!-- Babel Standalone for JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
     <!-- Environment config (env.local.js overrides for local dev) -->
     <script src="env.js"></script>
     <script src="env.local.js" onerror=""></script>
 
-    <!-- AI Chatbot Widget -->
-    <script type="text/babel" src="chatbot/ChatbotWidget.jsx"></script>
+    <!-- AI Chatbot Widget (pre-compiled from ChatbotWidget.jsx) -->
+    <script src="chatbot/ChatbotWidget.js"></script>
 </body>
 </html>

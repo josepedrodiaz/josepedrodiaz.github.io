@@ -47,7 +47,12 @@
       }
     },
     "experience": {
-      "title": "Experience"
+      "title": "Experience",
+      "freelance": {
+        "title": "Freelance WordPress & AI Developer",
+        "item1": "WordPress custom development, theme and plugin building for clients",
+        "item2": "AI integration with Google Gemini API, serverless architectures on Vercel"
+      }
     },
     "contact": {
       "title": "Contact"
@@ -101,7 +106,12 @@
       }
     },
     "experience": {
-      "title": "Experiencia"
+      "title": "Experiencia",
+      "freelance": {
+        "title": "Freelance WordPress & Desarrollador IA",
+        "item1": "Desarrollo WordPress a medida, creación de themes y plugins para clientes",
+        "item2": "Integración de IA con Google Gemini API, arquitecturas serverless en Vercel"
+      }
     },
     "contact": {
       "title": "Contacto"
