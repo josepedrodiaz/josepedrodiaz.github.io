@@ -20,6 +20,7 @@ const ChatbotWidget = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
+  const msgIdRef = useRef(0);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isAvailable, setIsAvailable] = useState(false);
@@ -301,16 +302,18 @@ const ChatbotWidget = ({
       .catch(() => setIsAvailable(false));
   }, []);
 
-  // Initialize with welcome message
+  // Initialize with welcome message on first mount
   useEffect(() => {
+    msgIdRef.current += 1;
     setMessages([
       {
+        id: msgIdRef.current,
         type: 'bot',
         content: t.welcome,
         timestamp: new Date()
       }
     ]);
-  }, [language]);
+  }, []);
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -329,7 +332,9 @@ const ChatbotWidget = ({
     if (!message || isLoading) return;
 
     // Add user message
+    msgIdRef.current += 1;
     const userMessage = {
+      id: msgIdRef.current,
       type: 'user',
       content: message,
       timestamp: new Date()
@@ -366,7 +371,9 @@ const ChatbotWidget = ({
       const data = await response.json();
 
       if (data.success && data.response) {
+        msgIdRef.current += 1;
         const botMessage = {
+          id: msgIdRef.current,
           type: 'bot',
           content: data.response,
           timestamp: new Date()
@@ -378,7 +385,9 @@ const ChatbotWidget = ({
 
     } catch (error) {
       console.error('Chatbot error:', error);
+      msgIdRef.current += 1;
       const errorMessage = {
+        id: msgIdRef.current,
         type: 'bot',
         content: t.error,
         timestamp: new Date()
@@ -434,15 +443,6 @@ const ChatbotWidget = ({
             <div style={styles.headerActions}>
               <button
                 onClick={() => setIsOpen(false)}
-                aria-label={t.minimize}
-                style={styles.headerBtn}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(63, 63, 70, 0.8)'; e.currentTarget.style.color = '#fafafa'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(63, 63, 70, 0.5)'; e.currentTarget.style.color = '#a1a1aa'; }}
-              >
-                <i className="fas fa-minus"></i>
-              </button>
-              <button
-                onClick={() => setIsOpen(false)}
                 aria-label={t.closeAria}
                 style={styles.headerBtn}
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(63, 63, 70, 0.8)'; e.currentTarget.style.color = '#fafafa'; }}
@@ -455,9 +455,9 @@ const ChatbotWidget = ({
 
           {/* Messages */}
           <div style={styles.messagesContainer}>
-            {messages.map((msg, index) => (
+            {messages.map((msg) => (
               <div
-                key={index}
+                key={msg.id}
                 style={{
                   ...styles.message,
                   ...(msg.type === 'user' ? styles.messageUser : {})

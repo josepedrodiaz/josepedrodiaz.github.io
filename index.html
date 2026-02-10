@@ -516,9 +516,14 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-    <!-- Environment config (env.local.js overrides for local dev) -->
+    <!-- Environment config -->
     <script src="env.js"></script>
-    <script src="env.local.js" onerror=""></script>
+    <script>
+    // Load local dev overrides only on localhost (env.local.js is gitignored, avoids 404 in production)
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      document.write('<script src="env.local.js"><\/script>');
+    }
+    </script>
 
     <!-- AI Chatbot Widget (pre-compiled from ChatbotWidget.jsx) -->
     <script src="chatbot/ChatbotWidget.js"></script>
