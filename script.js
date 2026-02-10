@@ -78,6 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Experience keywords for each position (structured format)
 const experienceKeywords = {
+    'Freelance WordPress & AI Developer': {
+        role: ['Freelance Developer'],
+        tech: ['WordPress', 'PHP', 'Google Gemini API', 'Vercel', 'Node.js', 'JavaScript', 'REST APIs'],
+        skill: ['Custom Development', 'AI Integration', 'Serverless Architecture', 'Theme Building', 'Plugin Development'],
+        context: ['Freelance', 'Remote', 'AI Solutions']
+    },
     'Radish Lab': {
         role: ['Web Developer'],
         tech: ['WordPress Core', 'PHP 8.x', 'Modern JavaScript', 'Laravel', 'MySQL', 'jQuery', 'HTML5/CSS3', 'Git Workflow', 'Sage Root'],
@@ -157,7 +163,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Function to generate tags HTML for a company
 function generateTagsHTML(companyData, companyId) {
     const categories = [
-        { name: 'ROLE', key: 'role', class: 'role' },
         { name: 'TECHNOLOGIES', key: 'tech', class: 'tech' },
         { name: 'SKILLS', key: 'skill', class: 'skill' },
         { name: 'CONTEXT', key: 'context', class: 'context' }
@@ -232,6 +237,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (companyData) {
             // Create a safe ID from company name
             const companyId = companyName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+            // Inject role tag near the location line
+            const locationP = card.querySelector('p .fa-map-marker-alt');
+            if (locationP && companyData.role) {
+                const locationEl = locationP.closest('p');
+                const roleHTML = companyData.role.map(r =>
+                    `<span class="tag-chip role" style="margin-left: 8px; font-size: 0.688rem; padding: 2px 8px; vertical-align: middle;">${r}</span>`
+                ).join('');
+                locationEl.insertAdjacentHTML('beforeend', roleHTML);
+            }
 
             // Find the last ul in the card
             const lastUl = card.querySelector('ul:last-of-type');

@@ -14,10 +14,12 @@
       "location": "Currently based in La Plata - Buenos Aires - Argentina"
     },
     "about": {
+      "label": "// about",
       "title": "About Me",
       "content": "I build robust, scalable web applications using WordPress, PHP, Laravel, and modern JavaScript frameworks. With 15+ years of full-stack experience, I specialize in developing custom WordPress solutions, RESTful APIs, and database-driven systems. I'm passionate about writing clean, maintainable code, implementing secure authentication systems, and delivering responsive, cross-browser compatible interfaces. I craft reliable backend architectures while ensuring seamless frontend user experiences."
     },
     "portfolio": {
+      "label": "// portfolio",
       "title": "Featured Projects",
       "livesite": "Live Site",
       "casestudy": "Case Study",
@@ -47,6 +49,7 @@
       }
     },
     "experience": {
+      "label": "// experience",
       "title": "Experience",
       "freelance": {
         "title": "Freelance WordPress & AI Developer",
@@ -55,6 +58,7 @@
       }
     },
     "contact": {
+      "label": "// contact",
       "title": "Contact"
     }
   },
@@ -73,10 +77,12 @@
       "location": "Actualmente en La Plata - Buenos Aires - Argentina"
     },
     "about": {
+      "label": "// acerca de",
       "title": "Acerca de Mí",
       "content": "Construyo aplicaciones web robustas y escalables usando WordPress, PHP, Laravel y frameworks JavaScript modernos. Con más de 15 años de experiencia full-stack, me especializo en desarrollar soluciones personalizadas de WordPress, APIs RESTful y sistemas basados en bases de datos. Me apasiona escribir código limpio y mantenible, implementar sistemas de autenticación seguros y entregar interfaces responsivas y compatibles con todos los navegadores. Creo arquitecturas backend confiables mientras aseguro experiencias frontend fluidas."
     },
     "portfolio": {
+      "label": "// portafolio",
       "title": "Proyectos Destacados",
       "livesite": "Ver Sitio",
       "casestudy": "Caso de Estudio",
@@ -106,6 +112,7 @@
       }
     },
     "experience": {
+      "label": "// experiencia",
       "title": "Experiencia",
       "freelance": {
         "title": "Freelance WordPress & Desarrollador IA",
@@ -114,6 +121,7 @@
       }
     },
     "contact": {
+      "label": "// contacto",
       "title": "Contacto"
     }
   }
