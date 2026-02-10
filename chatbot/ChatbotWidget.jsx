@@ -56,18 +56,18 @@ const ChatbotWidget = ({
       fontFamily: 'inherit'
     },
     toggleBtn: {
-      width: '60px',
-      height: '60px',
+      width: '56px',
+      height: '56px',
       borderRadius: '50%',
-      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
-      border: 'none',
+      background: '#141416',
+      border: '1px solid #27272a',
       cursor: 'pointer',
-      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.4)',
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: 'white',
-      fontSize: '24px',
+      color: '#a78bfa',
+      fontSize: '22px',
       transition: 'all 0.3s ease'
     },
     window: {
@@ -75,22 +75,23 @@ const ChatbotWidget = ({
       maxWidth: 'calc(100vw - 40px)',
       height: '600px',
       maxHeight: 'calc(100vh - 100px)',
-      background: 'white',
+      background: '#09090b',
       borderRadius: '16px',
-      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
+      border: '1px solid #27272a',
+      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
       display: 'flex',
       flexDirection: 'column',
       overflow: 'hidden',
       animation: 'slideUp 0.3s ease-out'
     },
     header: {
-      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
-      color: 'white',
+      background: '#141416',
+      color: '#fafafa',
       padding: '16px 20px',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+      borderBottom: '1px solid #27272a'
     },
     title: {
       fontSize: '18px',
@@ -102,9 +103,9 @@ const ChatbotWidget = ({
       gap: '8px'
     },
     headerBtn: {
-      background: 'rgba(255, 255, 255, 0.2)',
+      background: 'rgba(63, 63, 70, 0.5)',
       border: 'none',
-      color: 'white',
+      color: '#a1a1aa',
       width: '32px',
       height: '32px',
       borderRadius: '8px',
@@ -119,7 +120,7 @@ const ChatbotWidget = ({
       flex: 1,
       overflowY: 'auto',
       padding: '20px',
-      background: '#f9fafb',
+      background: '#09090b',
       display: 'flex',
       flexDirection: 'column',
       gap: '12px'
@@ -143,12 +144,12 @@ const ChatbotWidget = ({
       flexShrink: 0
     },
     avatarBot: {
-      background: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
+      background: 'linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%)',
       color: 'white'
     },
     avatarUser: {
-      background: 'linear-gradient(135deg, #6b7280 0%, #9ca3af 100%)',
-      color: 'white'
+      background: '#27272a',
+      color: '#a1a1aa'
     },
     messageContent: {
       maxWidth: '70%',
@@ -158,13 +159,13 @@ const ChatbotWidget = ({
       fontSize: '14px'
     },
     messageContentBot: {
-      background: 'white',
-      color: '#1f2937',
+      background: '#141416',
+      color: '#d4d4d8',
       borderBottomLeftRadius: '4px',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+      border: '1px solid #27272a'
     },
     messageContentUser: {
-      background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+      background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
       color: 'white',
       borderBottomRightRadius: '4px'
     },
@@ -177,30 +178,30 @@ const ChatbotWidget = ({
       width: '8px',
       height: '8px',
       borderRadius: '50%',
-      background: '#9ca3af',
+      background: '#52525b',
       animation: 'typing 1.4s infinite'
     },
     inputArea: {
       padding: '16px 20px',
-      background: 'white',
-      borderTop: '1px solid #e5e7eb',
+      background: '#141416',
+      borderTop: '1px solid #27272a',
       display: 'flex',
       gap: '12px'
     },
     input: {
       flex: 1,
-      border: '2px solid #e5e7eb',
+      border: '1px solid #27272a',
       borderRadius: '12px',
       padding: '12px 16px',
       fontSize: '14px',
       outline: 'none',
       transition: 'all 0.2s',
       fontFamily: 'inherit',
-      backgroundColor: 'white',
-      color: '#1f2937'
+      backgroundColor: '#09090b',
+      color: '#fafafa'
     },
     sendBtn: {
-      background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+      background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)',
       border: 'none',
       color: 'white',
       width: '44px',
@@ -354,8 +355,8 @@ const ChatbotWidget = ({
           onClick={() => setIsOpen(true)}
           aria-label={t.openAria}
           style={styles.toggleBtn}
-          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.borderColor = '#a78bfa'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.borderColor = '#27272a'; }}
         >
           <i className="fas fa-comment"></i>
         </button>
@@ -372,8 +373,8 @@ const ChatbotWidget = ({
                 onClick={() => setIsOpen(false)}
                 aria-label={t.minimize}
                 style={styles.headerBtn}
-                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)'}
-                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(63, 63, 70, 0.8)'; e.currentTarget.style.color = '#fafafa'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(63, 63, 70, 0.5)'; e.currentTarget.style.color = '#a1a1aa'; }}
               >
                 <i className="fas fa-minus"></i>
               </button>
@@ -381,8 +382,8 @@ const ChatbotWidget = ({
                 onClick={() => setIsOpen(false)}
                 aria-label={t.closeAria}
                 style={styles.headerBtn}
-                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)'}
-                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(63, 63, 70, 0.8)'; e.currentTarget.style.color = '#fafafa'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(63, 63, 70, 0.5)'; e.currentTarget.style.color = '#a1a1aa'; }}
               >
                 <i className="fas fa-times"></i>
               </button>
@@ -452,11 +453,11 @@ const ChatbotWidget = ({
                 ...(isLoading ? styles.sendBtnDisabled : {})
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = '#3b82f6';
-                e.currentTarget.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+                e.currentTarget.style.borderColor = '#a78bfa';
+                e.currentTarget.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.1)';
               }}
               onBlur={(e) => {
-                e.currentTarget.style.borderColor = '#e5e7eb';
+                e.currentTarget.style.borderColor = '#27272a';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             />

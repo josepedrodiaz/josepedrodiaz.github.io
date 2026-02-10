@@ -194,6 +194,27 @@ nav.visible {
     animation: loaderGrow 2s ease-in-out forwards;
 }
 
+/* ─── Profile Photo ────────────────────────────── */
+
+.profile-photo {
+    filter: grayscale(100%);
+    transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-photo:hover {
+    filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+    .profile-photo {
+        filter: saturate(0.4);
+    }
+
+    .profile-photo:active {
+        filter: saturate(1);
+    }
+}
+
 /* ─── Hero Section ─────────────────────────────── */
 
 .hero-gradient {
