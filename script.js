@@ -219,7 +219,7 @@ function toggleTags(sectionId, button) {
 
 // Initialize tags for all experience cards
 document.addEventListener('DOMContentLoaded', () => {
-    const experienceCards = document.querySelectorAll('#experience .bg-white');
+    const experienceCards = document.querySelectorAll('#experience .experience-card');
 
     experienceCards.forEach(card => {
         const h3 = card.querySelector('h3');
