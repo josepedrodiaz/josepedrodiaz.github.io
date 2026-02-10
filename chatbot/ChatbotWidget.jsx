@@ -21,7 +21,8 @@ const ChatbotWidget = ({
 
   const translations = {
     en: {
-      title: 'Ask me anything!',
+      title: 'AI Assistant',
+      subtitle: 'Powered by AI',
       placeholder: 'Ask about my skills, experience...',
       send: 'Send',
       thinking: 'Thinking...',
@@ -32,7 +33,8 @@ const ChatbotWidget = ({
       minimize: 'Minimize'
     },
     es: {
-      title: '¡Pregúntame lo que quieras!',
+      title: 'Asistente IA',
+      subtitle: 'Inteligencia artificial',
       placeholder: 'Pregunta sobre mis habilidades, experiencia...',
       send: 'Enviar',
       thinking: 'Pensando...',
@@ -93,10 +95,27 @@ const ChatbotWidget = ({
       alignItems: 'center',
       borderBottom: '1px solid #27272a'
     },
+    titleWrapper: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px'
+    },
+    sparkleIcon: {
+      fontSize: '16px',
+      color: '#a78bfa'
+    },
     title: {
-      fontSize: '18px',
+      fontSize: '16px',
       fontWeight: '700',
       margin: 0
+    },
+    subtitle: {
+      fontSize: '11px',
+      color: '#71717a',
+      fontWeight: '400',
+      letterSpacing: '0.05em',
+      textTransform: 'uppercase',
+      marginTop: '2px'
     },
     headerActions: {
       display: 'flex',
@@ -358,7 +377,7 @@ const ChatbotWidget = ({
           onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.borderColor = '#a78bfa'; }}
           onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.borderColor = '#27272a'; }}
         >
-          <i className="fas fa-comment"></i>
+          <i className="fas fa-wand-magic-sparkles"></i>
         </button>
       )}
 
@@ -367,7 +386,13 @@ const ChatbotWidget = ({
         <div style={styles.window}>
           {/* Header */}
           <div style={styles.header}>
-            <h3 style={styles.title}>{t.title}</h3>
+            <div>
+              <div style={styles.titleWrapper}>
+                <i className="fas fa-wand-magic-sparkles" style={styles.sparkleIcon}></i>
+                <h3 style={styles.title}>{t.title}</h3>
+              </div>
+              <div style={styles.subtitle}>{t.subtitle}</div>
+            </div>
             <div style={styles.headerActions}>
               <button
                 onClick={() => setIsOpen(false)}
@@ -405,7 +430,7 @@ const ChatbotWidget = ({
                   ...styles.avatar,
                   ...(msg.type === 'bot' ? styles.avatarBot : styles.avatarUser)
                 }}>
-                  <i className={`fas ${msg.type === 'bot' ? 'fa-robot' : 'fa-user'}`}></i>
+                  <i className={`fas ${msg.type === 'bot' ? 'fa-wand-magic-sparkles' : 'fa-user'}`}></i>
                 </div>
 
                 {/* Message Content */}
@@ -422,7 +447,7 @@ const ChatbotWidget = ({
             {isLoading && (
               <div style={styles.message}>
                 <div style={styles.avatarBot}>
-                  <i className="fas fa-robot"></i>
+                  <i className="fas fa-wand-magic-sparkles"></i>
                 </div>
                 <div style={{...styles.messageContent, ...styles.messageContentBot, padding: '16px'}}>
                   <div style={styles.typingIndicator}>
