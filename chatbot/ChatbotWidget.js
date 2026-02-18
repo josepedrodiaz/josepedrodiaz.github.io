@@ -35,7 +35,10 @@ const ChatbotWidget = ({
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isAvailable, setIsAvailable] = useState(false);
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(() => {
+    const langSwitch = document.getElementById('langSwitch');
+    return langSwitch?.checked ? 'es' : 'en';
+  });
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const translations = {
@@ -307,16 +310,25 @@ const ChatbotWidget = ({
     }).then(res => setIsAvailable(res.ok)).catch(() => setIsAvailable(false));
   }, []);
 
-  // Initialize with welcome message on first mount
+  // Initialize with welcome message and update on language change
   useEffect(() => {
-    msgIdRef.current += 1;
-    setMessages([{
-      id: msgIdRef.current,
-      type: 'bot',
-      content: t.welcome,
-      timestamp: new Date()
-    }]);
-  }, []);
+    setMessages(prev => {
+      if (prev.length === 0) {
+        msgIdRef.current += 1;
+        return [{
+          id: msgIdRef.current,
+          type: 'bot',
+          content: t.welcome,
+          isWelcome: true,
+          timestamp: new Date()
+        }];
+      }
+      return prev.map(msg => msg.isWelcome ? {
+        ...msg,
+        content: t.welcome
+      } : msg);
+    });
+  }, [language]);
 
   // Auto-scroll to bottom
   useEffect(() => {
