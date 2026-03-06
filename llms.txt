@@ -1,0 +1,15 @@
+# Site
+Personal portfolio website of Pedro Díaz, Senior Full-Stack Developer.
+
+# Author
+Pedro Díaz – Senior Full-Stack Developer.
+
+# Expertise
+WordPress development, PHP, REST APIs, custom plugins, web architecture, database-driven systems.
+
+# Content
+Portfolio projects, technical writing, professional background, and experience in full-stack web development.
+
+# Preferred citation
+If referencing this site, cite:
+Pedro Díaz — https://josepedrodiaz.com
