@@ -33,10 +33,6 @@
         "title": "Women's Refugee Commission",
         "description": "Part of Radish Lab team that migrated WRC from Joomla to WordPress. Contributed to rebuilding the resource library with custom post types and advanced taxonomy, implemented thematic navigation architecture, and integrated analytics tracking for decades of advocacy publications."
       },
-      "tcf": {
-        "title": "The Century Foundation",
-        "description": "Part of Radish Lab team that redesigned The New York Community Trust's digital platform. Contributed to developing responsive mega menu system, building modular component-based CMS architecture, and implementing WCAG AA accessibility standards while consolidating three regional websites into unified experience."
-      },
       "proz": {
         "title": "ProZ.com Platform",
         "description": "Contributed to maintaining and enhancing ProZ.com, the world's largest community platform for translation professionals with over 1.6 million users. Worked on legacy codebase refactoring, implemented new features, improved performance, and maintained critical systems serving global translation industry."
@@ -90,10 +86,6 @@
       "wrc": {
         "title": "Women's Refugee Commission",
         "description": "Parte del equipo de Radish Lab que migró WRC de Joomla a WordPress. Contribuí a reconstruir la biblioteca de recursos con custom post types y taxonomía avanzada, implementé arquitectura de navegación temática e integré seguimiento de analytics para décadas de publicaciones de incidencia."
-      },
-      "tcf": {
-        "title": "The Century Foundation",
-        "description": "Parte del equipo de Radish Lab que rediseñó la plataforma digital de The New York Community Trust. Contribuí a desarrollar sistema de mega menú responsivo, construir arquitectura de CMS modular basada en componentes e implementar estándares de accesibilidad WCAG AA mientras consolidábamos tres sitios web regionales en una experiencia unificada."
       },
       "proz": {
         "title": "Plataforma ProZ.com",
