@@ -44,6 +44,10 @@
       "gba": {
         "title": "Digital Records System - Buenos Aires Government",
         "description": "Developed electronic records management system for the Ministry of Production of Buenos Aires Province. Built secure document workflow platform, implemented digital signatures, and created administrative interfaces for government officials to manage production and business development programs."
+      },
+      "custommark": {
+        "title": "Custom Mark",
+        "description": "Built a WooCommerce storefront for a promotional products company specializing in branded merchandise. Configured product catalog with custom attributes and variations, integrated quote request flow alongside standard checkout, and shaped a dark, editorial design for the brand."
       }
     },
     "experience": {
@@ -98,6 +102,10 @@
       "gba": {
         "title": "Sistema de Expediente Electrónico - Gobierno de Buenos Aires",
         "description": "Desarrollé sistema de gestión de expedientes electrónicos para el Ministerio de Producción de la Provincia de Buenos Aires. Construí plataforma segura de flujo de documentos, implementé firmas digitales y creé interfaces administrativas para funcionarios gubernamentales que gestionan programas de producción y desarrollo empresarial."
+      },
+      "custommark": {
+        "title": "Custom Mark",
+        "description": "Armé una tienda en WooCommerce para una empresa de productos promocionales especializada en merchandising de marca. Configuré el catálogo con atributos y variaciones personalizadas, integré un flujo de pedido de cotización junto al checkout estándar y acompañé el desarrollo de una identidad visual oscura y editorial."
       }
     },
     "experience": {
