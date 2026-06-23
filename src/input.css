@@ -201,7 +201,32 @@ nav.visible {
     transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.profile-photo:hover {
+.profile-photo:hover,
+.profile-ring:hover .profile-photo {
+    filter: grayscale(0%);
+}
+
+/* AI live-portrait video, layered over the photo, revealed on hover */
+.profile-video {
+    position: absolute;
+    inset: 0;
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+    opacity: 0;
+    filter: grayscale(100%);
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-ring:hover .profile-video,
+.profile-ring.is-playing .profile-video {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.profile-ring.is-playing .profile-photo {
     filter: grayscale(0%);
 }
 
@@ -212,6 +237,12 @@ nav.visible {
 
     .profile-photo:active {
         filter: saturate(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-video {
+        display: none;
     }
 }
 

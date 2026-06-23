@@ -257,3 +257,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Profile photo: play AI live-portrait video on hover / tap
+document.addEventListener('DOMContentLoaded', () => {
+    const ring = document.getElementById('profileRing');
+    if (!ring) return;
+    const video = ring.querySelector('.profile-video');
+    if (!video) return;
+
+    // Desktop only: needs a real pointer with hover. On touch/mobile the
+    // video never loads (0 bytes) and the photo keeps its own behavior.
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (reduced || !canHover) return;
+
+    // Load the clip now that we know it's a hover-capable device
+    video.src = video.dataset.src;
+    video.load();
+
+    const RATE = 2;
+    let rafId = null;
+
+    const cancelRewind = () => {
+        if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+    };
+
+    // Forward: turn to look at you
+    const playForward = () => {
+        cancelRewind();
+        ring.classList.add('is-playing');
+        video.playbackRate = RATE;
+        const p = video.play();
+        if (p) p.catch(() => {}); // ignore autoplay rejections / missing file
+    };
+
+    // Reverse: manually rewind currentTime (HTML video can't play backwards natively)
+    const rewind = () => {
+        cancelRewind();
+        video.pause();
+        let last = null;
+        const step = (ts) => {
+            if (last === null) last = ts;
+            // cap dt so a frame hiccup never makes it leap to the start
+            const dt = Math.min((ts - last) / 1000, 0.05);
+            last = ts;
+            video.currentTime = Math.max(0, video.currentTime - RATE * dt);
+            if (video.currentTime <= 0.03) {
+                video.currentTime = 0;
+                ring.classList.remove('is-playing'); // fade back to the photo
+                rafId = null;
+                return;
+            }
+            rafId = requestAnimationFrame(step);
+        };
+        rafId = requestAnimationFrame(step);
+    };
+
+    ring.addEventListener('mouseenter', playForward);
+    ring.addEventListener('mouseleave', rewind);
+});
