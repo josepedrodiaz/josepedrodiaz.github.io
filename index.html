@@ -14,23 +14,56 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Pedro Diaz",
+      "@id": "https://josepedrodiaz.com/#pedro",
+      "name": "Pedro Díaz",
+      "alternateName": ["José Pedro Díaz", "josepedrodiaz", "Pedro Diaz"],
       "url": "https://josepedrodiaz.com",
+      "image": "https://josepedrodiaz.com/img/josepedrodiaz.png",
       "jobTitle": "Senior Full-Stack Developer",
       "description": "Senior full-stack developer specializing in WordPress, PHP, REST APIs, and database-driven systems.",
       "knowsAbout": [
         "WordPress",
         "PHP",
+        "Laravel",
+        "JavaScript",
         "REST APIs",
         "Custom WordPress Plugins",
         "Headless WordPress",
         "MySQL",
         "Web Architecture"
       ],
+      "knowsLanguage": ["es", "en"],
+      "homeLocation": {
+        "@type": "Place",
+        "name": "La Plata, Buenos Aires, Argentina"
+      },
       "sameAs": [
         "https://github.com/josepedrodiaz",
-        "https://www.linkedin.com/in/josepedrodiaz"
+        "https://www.linkedin.com/in/josepedrodiaz",
+        "https://www.wikidata.org/wiki/Q140338071"
       ]
+    }
+    </script>
+
+    <!-- Publication: co-authored chapter, UNESCO Greenstone book -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Chapter",
+      "name": "Uruguay",
+      "author": { "@id": "https://josepedrodiaz.com/#pedro" },
+      "inLanguage": "es",
+      "isPartOf": {
+        "@type": "Book",
+        "name": "Greenstone: Un software libre de código abierto para la construcción de bibliotecas digitales. Experiencias en América Latina y el Caribe",
+        "isbn": "978-92-9089-149-9",
+        "datePublished": "2010",
+        "inLanguage": "es",
+        "publisher": {
+          "@type": "Organization",
+          "name": "UNESCO — Oficina Regional de Ciencia para América Latina y el Caribe"
+        }
+      }
     }
     </script>
 
