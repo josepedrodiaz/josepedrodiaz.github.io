@@ -23,6 +23,8 @@ const ChatbotWidget = ({
   const msgIdRef = useRef(0);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [slowResponse, setSlowResponse] = useState(false);
+  const slowTimerRef = useRef(null);
   const [isAvailable, setIsAvailable] = useState(false);
   const [language, setLanguage] = useState(() => {
     const langSwitch = document.getElementById('langSwitch');
@@ -39,6 +41,7 @@ const ChatbotWidget = ({
       placeholder: 'Ask about my skills, experience...',
       send: 'Send',
       thinking: 'Thinking...',
+      stillWorking: 'Still on it — the assistant is a bit busy…',
       error: 'Sorry, something went wrong. Please try again.',
       welcome: "Hi! I'm Pedro's AI assistant. Ask me about his skills, experience, or projects. You can also leave your contact info if you'd like Pedro to reach out!",
       closeAria: 'Close chat',
@@ -53,6 +56,7 @@ const ChatbotWidget = ({
       placeholder: 'Pregunta sobre mis habilidades, experiencia...',
       send: 'Enviar',
       thinking: 'Pensando...',
+      stillWorking: 'Sigo en eso — el asistente está con mucha demanda…',
       error: 'Lo siento, algo salió mal. Intenta de nuevo.',
       welcome: '¡Hola! Soy el asistente IA de Pedro. Pregúntame sobre sus habilidades, experiencia o proyectos. También puedes dejar tus datos de contacto si quieres que Pedro te escriba.',
       closeAria: 'Cerrar chat',
@@ -355,6 +359,10 @@ const ChatbotWidget = ({
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
+    setSlowResponse(false);
+    // If the backend is retrying an overloaded model the request runs long.
+    // After a few seconds, reassure the visitor it's still working, not stuck.
+    slowTimerRef.current = setTimeout(() => setSlowResponse(true), 3500);
 
     try {
       // Build conversation history for API
@@ -390,11 +398,15 @@ const ChatbotWidget = ({
         })
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      const data = await response.json().catch(() => ({}));
 
-      const data = await response.json();
+      if (!response.ok || !data.success || !data.response) {
+        // Surface the backend's friendly message (e.g. "assistant is busy,
+        // try again") when present, so the visitor knows it's temporary.
+        const err = new Error(`HTTP error! status: ${response.status}`);
+        err.userMessage = data.message;
+        throw err;
+      }
 
       if (data.success && data.response) {
         msgIdRef.current += 1;
@@ -434,12 +446,14 @@ const ChatbotWidget = ({
       const errorMessage = {
         id: msgIdRef.current,
         type: 'bot',
-        content: t.error,
+        content: error.userMessage || t.error,
         isError: true,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
+      clearTimeout(slowTimerRef.current);
+      setSlowResponse(false);
       setIsLoading(false);
     }
   };
@@ -539,6 +553,11 @@ const ChatbotWidget = ({
                     <div style={{...styles.typingDot, animationDelay: '150ms'}}></div>
                     <div style={{...styles.typingDot, animationDelay: '300ms'}}></div>
                   </div>
+                  {slowResponse && (
+                    <div style={{ marginTop: '8px', fontSize: '12px', color: '#71717a', fontStyle: 'italic' }}>
+                      {t.stillWorking}
+                    </div>
+                  )}
                 </div>
               </div>
             )}
