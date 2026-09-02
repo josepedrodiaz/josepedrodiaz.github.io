@@ -38,3 +38,4 @@ env.local.js
 
 # Claude Code instructions
 CLAUDE.md
+.claude/
