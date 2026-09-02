@@ -27,9 +27,9 @@
         "title": "Clinton Foundation Digital Platform",
         "description": "As part of Radish Lab's development team, contributed to redesigning the Clinton Foundation's website. Implemented modular WordPress architecture with WCAG AA accessibility standards, custom mega menu navigation, and flexible content management system supporting multiple program areas."
       },
-      "red": {
-        "title": "(RED) Partnership Platform",
-        "description": "Collaborated with Radish Lab team to refine (RED)'s Squarespace platform for global health partnerships. Developed custom JavaScript modules, integrated donation systems with performance optimization and SEO best practices."
+      "lamanana": {
+        "title": "La Mañana",
+        "description": "Full WordPress redesign for La Mañana, a Uruguayan daily newspaper. Rebuilt an editorial home and section templates on a custom JNews child theme with Elementor, and consolidated thousands of legacy articles into a cleaner category structure with 301 redirects. Also set up mega menus, a branded video viewer, a paywall/subscription flow, and hardening against bot attacks."
       },
       "wrc": {
         "title": "Women's Refugee Commission",
@@ -90,9 +90,9 @@
         "title": "Plataforma Digital Clinton Foundation",
         "description": "Como parte del equipo de desarrollo de Radish Lab, contribuí al rediseño del sitio web de la Fundación Clinton. Implementé arquitectura modular en WordPress con estándares de accesibilidad WCAG AA, navegación con mega menú personalizado y sistema de gestión de contenidos flexible para múltiples áreas de programa."
       },
-      "red": {
-        "title": "Plataforma de Partnerships (RED)",
-        "description": "Colaboré con el equipo de Radish Lab para refinar la plataforma Squarespace de (RED) para alianzas de salud global. Desarrollé módulos JavaScript personalizados, integré sistemas de donaciones con optimización de rendimiento y mejores prácticas de SEO."
+      "lamanana": {
+        "title": "La Mañana",
+        "description": "Rediseño WordPress completo para La Mañana, diario uruguayo. Reconstruí una home editorial y las plantillas de sección sobre un child theme de JNews a medida con Elementor, y consolidé miles de artículos en una estructura de categorías más limpia con redirects 301. Sumé mega menús, un visor de video con branding, paywall/suscripciones y mitigación de ataques de bots."
       },
       "wrc": {
         "title": "Women's Refugee Commission",
