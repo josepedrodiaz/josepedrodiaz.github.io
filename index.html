@@ -91,7 +91,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="bg-[#09090b]/80 backdrop-blur-xl p-4 fixed w-full z-50">
+    <nav class="bg-[#09090b] p-4 fixed w-full z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="#home" class="text-xl font-bold text-zinc-100 hover:text-accent transition-colors" style="margin-left: 1rem;">Pedro Díaz</a>
 
@@ -124,7 +124,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#09090b]/95 backdrop-blur-xl border-b border-zinc-800/50">
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#09090b] border-b border-zinc-800/50">
             <div class="flex flex-col items-center py-6 space-y-4">
                 <a href="#about" class="nav-link mobile-nav-link text-lg" data-i18n="nav.about">About</a>
                 <a href="#portfolio" class="nav-link mobile-nav-link text-lg" data-i18n="nav.portfolio">Portfolio</a>
@@ -161,11 +161,12 @@
                     </div>
                 </div>
                 <h1 class="text-5xl md:text-7xl font-display font-800 mb-6 tracking-tight" data-i18n="hero.title">Hello, I'm Pedro Díaz</h1>
-                <p class="text-lg md:text-xl mb-12 text-zinc-400 max-w-2xl mx-auto" data-i18n="hero.subtitle-tech">Senior Full-Stack Developer | WordPress &bull; PHP &bull; Laravel &bull; JavaScript</p>
+                <p class="text-lg md:text-xl mb-12 text-zinc-400 max-w-2xl mx-auto" data-i18n="hero.subtitle-tech">Senior Full-Stack Developer | RAG &amp; Vector Search &bull; AI Chatbots &bull; WordPress &bull; PHP &bull; Laravel</p>
                 <a href="#contact" class="status-badge">
                     <span class="status-dot"></span>
-                    <span data-i18n="hero.available">Available for work!</span>
+                    <span class="status-text" data-i18n="hero.available">Available for work!</span>
                 </a>
+                <a href="mailto:josepedrodiaz@gmail.com" class="hero-email">josepedrodiaz@gmail.com</a>
                 <p class="location-text" data-i18n="hero.location">Currently based in La Plata - Buenos Aires - Argentina</p>
             </div>
         </div>
@@ -182,12 +183,9 @@
     <!-- About Section -->
     <section id="about" class="py-24">
         <div class="max-w-4xl mx-auto px-4">
-            <div class="reveal">
-                <span class="section-label" data-i18n="about.label">// about</span>
-                <h2 class="section-heading text-4xl md:text-5xl mt-2 mb-10" data-i18n="about.title">About Me</h2>
-            </div>
-            <div class="card p-8 md:p-10 reveal">
-                <p class="text-lg leading-relaxed text-zinc-400" data-i18n="about.content">
+            <div class="reveal max-w-3xl">
+                <h2 class="section-heading text-4xl md:text-5xl mb-8" data-i18n="about.title">About Me</h2>
+                <p class="text-lg md:text-xl leading-relaxed text-zinc-400" data-i18n="about.content">
                     I build robust, scalable web applications using WordPress, PHP, Laravel, and modern JavaScript frameworks. With 15+ years of full-stack experience, I specialize in developing custom WordPress solutions, RESTful APIs, and database-driven systems. I'm passionate about writing clean, maintainable code, implementing secure authentication systems, and delivering responsive, cross-browser compatible interfaces. I craft reliable backend architectures while ensuring seamless frontend user experiences.
                 </p>
             </div>
@@ -200,29 +198,22 @@
     <section id="portfolio" class="py-24">
         <div class="max-w-6xl mx-auto px-4">
             <div class="reveal">
-                <span class="section-label" data-i18n="portfolio.label">// portfolio</span>
-                <h2 class="section-heading text-4xl md:text-5xl mt-2 mb-14" data-i18n="portfolio.title">Featured Projects</h2>
+                <h2 class="section-heading text-4xl md:text-5xl mb-16" data-i18n="portfolio.title">Featured Projects</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 reveal-stagger">
+            <div class="space-y-20 md:space-y-28 reveal-stagger">
                 <!-- Project 1: Clinton Foundation -->
-                <div class="project-card reveal">
-                    <div class="project-image h-56 overflow-hidden">
+                <article class="project reveal md:grid md:grid-cols-12 md:gap-10 md:items-center">
+                    <div class="project-media md:col-span-7 h-64 md:h-80 mb-6 md:mb-0">
                         <img src="img/portfolio/clinton.png" alt="Clinton Foundation Website" class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-700 text-zinc-100 mb-3" data-i18n="portfolio.clinton.title">Clinton Foundation Digital Platform</h3>
-                        <p class="text-zinc-500 text-sm mb-4 leading-relaxed" data-i18n="portfolio.clinton.description">
+                    <div class="md:col-span-5">
+                        <h3 class="project-title" data-i18n="portfolio.clinton.title">Clinton Foundation Digital Platform</h3>
+                        <p class="project-desc" data-i18n="portfolio.clinton.description">
                             Redesigned the Clinton Foundation's website to better communicate President Clinton's lifetime of public service. Built modular architecture with WCAG AA accessibility, custom mega menu, and thematic content organization. Created flexible design system enabling scalable content expansion across multiple program areas.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="tech-tag accent">WordPress</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">WCAG AA</span>
-                            <span class="tech-tag">SEO</span>
-                        </div>
-                        <div class="flex gap-4">
+                        <p class="tech-line">WordPress · PHP · JavaScript · WCAG AA · SEO</p>
+                        <div class="project-links">
                             <a href="https://www.clintonfoundation.org/" target="_blank" rel="noopener noreferrer" class="text-sm text-accent hover:text-accent-hover font-medium flex items-center gap-2 transition-colors">
                                 <i class="fas fa-external-link-alt text-xs"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
@@ -231,51 +222,39 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 2: Custom Mark -->
-                <div class="project-card reveal">
-                    <div class="project-image h-56 overflow-hidden">
+                <article class="project reveal md:grid md:grid-cols-12 md:gap-10 md:items-center">
+                    <div class="project-media md:col-span-7 md:order-2 h-64 md:h-80 mb-6 md:mb-0">
                         <img src="img/portfolio/custommark.png" alt="Custom Mark Promotional Products" class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-700 text-zinc-100 mb-3" data-i18n="portfolio.custommark.title">Custom Mark</h3>
-                        <p class="text-zinc-500 text-sm mb-4 leading-relaxed" data-i18n="portfolio.custommark.description">
+                    <div class="md:col-span-5 md:order-1">
+                        <h3 class="project-title" data-i18n="portfolio.custommark.title">Custom Mark</h3>
+                        <p class="project-desc" data-i18n="portfolio.custommark.description">
                             Built a WooCommerce storefront for a promotional products company specializing in branded merchandise. Configured product catalog with custom attributes and variations, integrated quote request flow alongside standard checkout, and shaped a dark, editorial design for the brand.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="tech-tag accent">WooCommerce</span>
-                            <span class="tech-tag">WordPress</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">E-commerce</span>
-                        </div>
-                        <div class="flex gap-4">
+                        <p class="tech-line">WooCommerce · WordPress · PHP · JavaScript · E-commerce</p>
+                        <div class="project-links">
                             <a href="https://custommark.co/" target="_blank" rel="noopener noreferrer" class="text-sm text-accent hover:text-accent-hover font-medium flex items-center gap-2 transition-colors">
                                 <i class="fas fa-external-link-alt text-xs"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 3: (RED) -->
-                <div class="project-card reveal">
-                    <div class="project-image h-56 overflow-hidden">
+                <article class="project reveal md:grid md:grid-cols-12 md:gap-10 md:items-center">
+                    <div class="project-media md:col-span-7 h-64 md:h-80 mb-6 md:mb-0">
                         <img src="img/portfolio/red.png" alt="(RED) Partnership Platform" class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-700 text-zinc-100 mb-3" data-i18n="portfolio.red.title">(RED) Partnership Platform</h3>
-                        <p class="text-zinc-500 text-sm mb-4 leading-relaxed" data-i18n="portfolio.red.description">
+                    <div class="md:col-span-5">
+                        <h3 class="project-title" data-i18n="portfolio.red.title">(RED) Partnership Platform</h3>
+                        <p class="project-desc" data-i18n="portfolio.red.description">
                             Collaborated with Radish Lab team to refine (RED)'s Squarespace platform for global health partnerships. Developed custom JavaScript modules, integrated donation systems with performance optimization and SEO best practices.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="tech-tag accent">Squarespace</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Custom CSS</span>
-                            <span class="tech-tag">SEO</span>
-                            <span class="tech-tag">Analytics</span>
-                        </div>
-                        <div class="flex gap-4">
+                        <p class="tech-line">Squarespace · JavaScript · Custom CSS · SEO · Analytics</p>
+                        <div class="project-links">
                             <a href="https://www.red.org/" target="_blank" rel="noopener noreferrer" class="text-sm text-accent hover:text-accent-hover font-medium flex items-center gap-2 transition-colors">
                                 <i class="fas fa-external-link-alt text-xs"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
@@ -284,26 +263,20 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <!-- Project 3: Women's Refugee Commission -->
-                <div class="project-card reveal">
-                    <div class="project-image h-56 overflow-hidden">
+                <!-- Project 4: Women's Refugee Commission -->
+                <article class="project reveal md:grid md:grid-cols-12 md:gap-10 md:items-center">
+                    <div class="project-media md:col-span-7 md:order-2 h-64 md:h-80 mb-6 md:mb-0">
                         <img src="img/portfolio/wrc.png" alt="Women's Refugee Commission Website" class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-700 text-zinc-100 mb-3" data-i18n="portfolio.wrc.title">Women's Refugee Commission</h3>
-                        <p class="text-zinc-500 text-sm mb-4 leading-relaxed" data-i18n="portfolio.wrc.description">
+                    <div class="md:col-span-5 md:order-1">
+                        <h3 class="project-title" data-i18n="portfolio.wrc.title">Women's Refugee Commission</h3>
+                        <p class="project-desc" data-i18n="portfolio.wrc.description">
                             Part of Radish Lab team that migrated WRC from Joomla to WordPress. Contributed to rebuilding the resource library with custom post types and advanced taxonomy, implemented thematic navigation architecture, and integrated analytics tracking for decades of advocacy publications.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="tech-tag accent">WordPress</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Migration</span>
-                            <span class="tech-tag">UX/IA</span>
-                        </div>
-                        <div class="flex gap-4">
+                        <p class="tech-line">WordPress · PHP · MySQL · Migration · UX/IA</p>
+                        <div class="project-links">
                             <a href="https://www.womensrefugeecommission.org/" target="_blank" rel="noopener noreferrer" class="text-sm text-accent hover:text-accent-hover font-medium flex items-center gap-2 transition-colors">
                                 <i class="fas fa-external-link-alt text-xs"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
@@ -312,52 +285,40 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 5: ProZ.com -->
-                <div class="project-card reveal">
-                    <div class="project-image h-56 overflow-hidden bg-gradient-to-br from-emerald-900/50 to-emerald-800/30 flex items-center justify-center p-8">
+                <article class="project reveal md:grid md:grid-cols-12 md:gap-10 md:items-center">
+                    <div class="project-media md:col-span-7 h-64 md:h-80 mb-6 md:mb-0 bg-gradient-to-br from-emerald-900/50 to-emerald-800/30 flex items-center justify-center p-10">
                         <img src="img/portfolio/proz-logo.png" alt="ProZ.com Translation Platform" class="max-w-full max-h-full object-contain" loading="lazy">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-700 text-zinc-100 mb-3" data-i18n="portfolio.proz.title">ProZ.com Platform</h3>
-                        <p class="text-zinc-500 text-sm mb-4 leading-relaxed" data-i18n="portfolio.proz.description">
+                    <div class="md:col-span-5">
+                        <h3 class="project-title" data-i18n="portfolio.proz.title">ProZ.com Platform</h3>
+                        <p class="project-desc" data-i18n="portfolio.proz.description">
                             Contributed to maintaining and enhancing ProZ.com, the world's largest community platform for translation professionals with over 1.6 million users. Worked on legacy codebase refactoring, implemented new features, improved performance, and maintained critical systems serving global translation industry.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="tech-tag accent">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Legacy Code</span>
-                            <span class="tech-tag">Performance</span>
-                        </div>
-                        <div class="flex gap-4">
+                        <p class="tech-line">PHP · MySQL · JavaScript · Legacy Code · Performance</p>
+                        <div class="project-links">
                             <a href="https://www.proz.com/" target="_blank" rel="noopener noreferrer" class="text-sm text-accent hover:text-accent-hover font-medium flex items-center gap-2 transition-colors">
                                 <i class="fas fa-external-link-alt text-xs"></i> <span data-i18n="portfolio.livesite">Live Site</span>
                             </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 6: Buenos Aires Government -->
-                <div class="project-card reveal">
-                    <div class="project-image h-56 overflow-hidden bg-gradient-to-br from-blue-900/50 to-cyan-800/30 flex items-center justify-center p-8">
+                <article class="project reveal md:grid md:grid-cols-12 md:gap-10 md:items-center">
+                    <div class="project-media md:col-span-7 md:order-2 h-64 md:h-80 mb-6 md:mb-0 bg-gradient-to-br from-blue-900/50 to-cyan-800/30 flex items-center justify-center p-10">
                         <img src="img/portfolio/gba-logo.svg" alt="Buenos Aires Government Digital Records" class="max-w-full max-h-full object-contain" loading="lazy">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-700 text-zinc-100 mb-3" data-i18n="portfolio.gba.title">Digital Records System - Buenos Aires Government</h3>
-                        <p class="text-zinc-500 text-sm mb-4 leading-relaxed" data-i18n="portfolio.gba.description">
+                    <div class="md:col-span-5 md:order-1">
+                        <h3 class="project-title" data-i18n="portfolio.gba.title">Digital Records System - Buenos Aires Government</h3>
+                        <p class="project-desc" data-i18n="portfolio.gba.description">
                             Developed electronic records management system for the Ministry of Production of Buenos Aires Province. Built secure document workflow platform, implemented digital signatures, and created administrative interfaces for government officials to manage production and business development programs.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-5">
-                            <span class="tech-tag accent">Laravel</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Digital Signatures</span>
-                            <span class="tech-tag">Government</span>
-                        </div>
+                        <p class="tech-line">Laravel · PHP · MySQL · Digital Signatures · Government</p>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -368,141 +329,162 @@
     <section id="experience" class="py-24">
         <div class="max-w-4xl mx-auto px-4">
             <div class="reveal">
-                <span class="section-label" data-i18n="experience.label">// experience</span>
-                <h2 class="section-heading text-4xl md:text-5xl mt-2 mb-14" data-i18n="experience.title">Experience</h2>
+                <h2 class="section-heading text-4xl md:text-5xl mb-16" data-i18n="experience.title">Experience</h2>
             </div>
 
-            <div class="space-y-5 reveal-stagger">
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100" data-i18n="experience.freelance.title">Freelance WordPress & AI Developer</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2026 &mdash; Present</span>
+            <div class="reveal-stagger">
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2026 &mdash; Present</div>
+                        <div class="exp-place">La Plata, Argentina</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>La Plata, Argentina</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span><span data-i18n="experience.freelance.item1">WordPress custom development, theme and plugin building for clients</span></li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span><span data-i18n="experience.freelance.item2">AI integration with Google Gemini API, serverless architectures on Vercel</span></li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title" data-i18n="experience.freelance.title">Freelance WordPress & AI Developer</h3>
+                        <ul class="exp-list">
+                            <li data-i18n="experience.freelance.item1">WordPress custom development, theme and plugin building for clients</li>
+                            <li data-i18n="experience.freelance.item2">AI integration with Google Gemini API, serverless architectures on Vercel</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Radish Lab - Full Stack Developer</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2021 &mdash; 2026</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2021 &mdash; 2026</div>
+                        <div class="exp-place">New York, NY</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>New York, NY</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Web development using WordPress framework and modern web technologies (PHP, JavaScript, jQuery, REST APIs)</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Full-stack development with focus on responsive design, cross-browser compatibility, and database optimization</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Radish Lab - Full Stack Developer</h3>
+                        <ul class="exp-list">
+                            <li>Web development using WordPress framework and modern web technologies (PHP, JavaScript, jQuery, REST APIs)</li>
+                            <li>Full-stack development with focus on responsive design, cross-browser compatibility, and database optimization</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">ProZ.com - Full Stack Developer</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2020 &mdash; 2021</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2020 &mdash; 2021</div>
+                        <div class="exp-place">La Plata, Argentina</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>La Plata, Argentina</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Maintained and enhanced a technology platform serving over a million affiliates</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Implemented full-stack solutions using PHP, MySQL, and modern web technologies</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">ProZ.com - Full Stack Developer</h3>
+                        <ul class="exp-list">
+                            <li>Maintained and enhanced a technology platform serving over a million affiliates</li>
+                            <li>Implemented full-stack solutions using PHP, MySQL, and modern web technologies</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Ministerio de Producción de la Provincia de Bs As - Full Stack Developer</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2019 &mdash; 2020</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2019 &mdash; 2020</div>
+                        <div class="exp-place">La Plata, Argentina</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>La Plata, Argentina</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Developed an electronic records management system using Laravel and REST APIs</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Implemented secure authentication systems and database optimization strategies</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Ministerio de Producción de la Provincia de Bs As - Full Stack Developer</h3>
+                        <ul class="exp-list">
+                            <li>Developed an electronic records management system using Laravel and REST APIs</li>
+                            <li>Implemented secure authentication systems and database optimization strategies</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Optimous - Full-stack Developer</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2018 &mdash; 2019</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2018 &mdash; 2019</div>
+                        <div class="exp-place">Buenos Aires, Argentina</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Buenos Aires, Argentina</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Developed multiple client systems using PHP, MySQL, and modern web technologies</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Implemented RESTful APIs and responsive web applications</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Optimous - Full-stack Developer</h3>
+                        <ul class="exp-list">
+                            <li>Developed multiple client systems using PHP, MySQL, and modern web technologies</li>
+                            <li>Implemented RESTful APIs and responsive web applications</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Le Utopik - Ecommerce Manager</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2017 &mdash; 2018</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2017 &mdash; 2018</div>
+                        <div class="exp-place">Greater Buenos Aires, Argentina</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Greater Buenos Aires, Argentina</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Managed and optimized e-commerce platform operations</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Implemented web development solutions and database management systems</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Le Utopik - Ecommerce Manager</h3>
+                        <ul class="exp-list">
+                            <li>Managed and optimized e-commerce platform operations</li>
+                            <li>Implemented web development solutions and database management systems</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">El Misti Hostels & Pousadas - Technology Manager</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2010 &mdash; 2017</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2010 &mdash; 2017</div>
+                        <div class="exp-place">Rio de Janeiro, Brazil</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Rio de Janeiro, Brazil</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Led technology initiatives and web development projects using WordPress</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Managed database systems and implemented cross-browser compatible solutions</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">El Misti Hostels & Pousadas - Technology Manager</h3>
+                        <ul class="exp-list">
+                            <li>Led technology initiatives and web development projects using WordPress</li>
+                            <li>Managed database systems and implemented cross-browser compatible solutions</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Universidad de la República - Professor</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2007 &mdash; 2011</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2007 &mdash; 2011</div>
+                        <div class="exp-place">Uruguay</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Uruguay</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Taught Digital Archives and Internet Content Creation</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Developed and implemented database management curriculum</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Universidad de la República - Professor</h3>
+                        <ul class="exp-list">
+                            <li>Taught Digital Archives and Internet Content Creation</li>
+                            <li>Developed and implemented database management curriculum</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Universia - Technology Department</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2005 &mdash; 2010</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2005 &mdash; 2010</div>
+                        <div class="exp-place">Montevideo, Uruguay</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Montevideo, Uruguay</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Led web development initiatives and database management projects</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Implemented cross-browser compatible solutions and relational database systems</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Universia - Technology Department</h3>
+                        <ul class="exp-list">
+                            <li>Led web development initiatives and database management projects</li>
+                            <li>Implemented cross-browser compatible solutions and relational database systems</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Amnistía Internacional - Web Manager</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2009</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2009</div>
+                        <div class="exp-place">Uruguay</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Uruguay</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Managed web development projects and content management systems</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Implemented cross-browser compatible solutions</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Amnistía Internacional - Web Manager</h3>
+                        <ul class="exp-list">
+                            <li>Managed web development projects and content management systems</li>
+                            <li>Implemented cross-browser compatible solutions</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="experience-card p-6 md:p-8 reveal">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                        <h3 class="text-xl font-display font-700 text-zinc-100">Bit Sistemas - Assistant</h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 md:mt-0 whitespace-nowrap">2005</span>
+                <div class="experience-entry reveal md:grid md:grid-cols-12 md:gap-8">
+                    <div class="md:col-span-3 mb-3 md:mb-0">
+                        <div class="exp-date">2005</div>
+                        <div class="exp-place">Montevideo, Uruguay</div>
                     </div>
-                    <p class="text-xs text-zinc-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Montevideo, Uruguay</p>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Supported development team in various technical projects</li>
-                        <li class="flex gap-3"><span class="text-accent mt-1.5 text-[6px] leading-none"><i class="fas fa-circle"></i></span>Assisted in system implementation and maintenance</li>
-                    </ul>
+                    <div class="md:col-span-9">
+                        <h3 class="exp-title">Bit Sistemas - Assistant</h3>
+                        <ul class="exp-list">
+                            <li>Supported development team in various technical projects</li>
+                            <li>Assisted in system implementation and maintenance</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -513,33 +495,22 @@
     <!-- Contact Section -->
     <section id="contact" class="py-24">
         <div class="max-w-4xl mx-auto px-4">
-            <div class="reveal">
-                <span class="section-label" data-i18n="contact.label">// contact</span>
-                <h2 class="section-heading text-4xl md:text-5xl mt-2 mb-14" data-i18n="contact.title">Contact</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-4 reveal-stagger">
-                <a href="mailto:josepedrodiaz@gmail.com" class="contact-link reveal">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <div class="text-xs text-zinc-500 mb-1">Email</div>
-                        <div class="text-sm">josepedrodiaz@gmail.com</div>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/josepedrodiaz" target="_blank" rel="noopener noreferrer" class="contact-link reveal">
-                    <i class="fab fa-linkedin"></i>
-                    <div>
-                        <div class="text-xs text-zinc-500 mb-1">LinkedIn</div>
-                        <div class="text-sm">josepedrodiaz</div>
-                    </div>
-                </a>
-                <a href="https://github.com/josepedrodiaz" target="_blank" rel="noopener noreferrer" class="contact-link reveal">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <div class="text-xs text-zinc-500 mb-1">GitHub</div>
-                        <div class="text-sm">josepedrodiaz</div>
-                    </div>
-                </a>
+            <div class="reveal max-w-3xl">
+                <h2 class="section-heading text-4xl md:text-5xl mb-10" data-i18n="contact.title">Contact</h2>
+                <div class="contact-list">
+                    <a href="mailto:josepedrodiaz@gmail.com" class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">josepedrodiaz@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/josepedrodiaz" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">josepedrodiaz</span>
+                    </a>
+                    <a href="https://github.com/josepedrodiaz" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">josepedrodiaz</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
