@@ -148,3 +148,21 @@ document.addEventListener('DOMContentLoaded', () => {
     ring.addEventListener('mouseenter', playForward);
     ring.addEventListener('mouseleave', rewind);
 });
+
+// Portfolio video: start the (baked-in) scroll from the top when it comes into view
+document.addEventListener('DOMContentLoaded', () => {
+    const vids = document.querySelectorAll('.project-media video');
+    if (!vids.length || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                try { video.currentTime = 0; } catch (e) {}
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.4 });
+    vids.forEach((v) => io.observe(v));
+});

@@ -16,7 +16,7 @@
     "about": {
       "label": "// about",
       "title": "About Me",
-      "content": "I build robust, scalable web applications using WordPress, PHP, Laravel, and modern JavaScript frameworks. With 15+ years of full-stack experience, I specialize in developing custom WordPress solutions, RESTful APIs, and database-driven systems. I'm passionate about writing clean, maintainable code, implementing secure authentication systems, and delivering responsive, cross-browser compatible interfaces. I craft reliable backend architectures while ensuring seamless frontend user experiences."
+      "content": "I've spent 15+ years building web apps end to end — WordPress, PHP, Laravel, JavaScript. These days a good part of that work is AI: retrieval-augmented chatbots, vector search over a client's own content, and wiring language models into sites and workflows that already exist. I like the backend problems (data models, APIs, authentication) as much as getting the frontend to feel right, and I care about leaving code that someone else can actually pick up later."
     },
     "portfolio": {
       "label": "// portfolio",
@@ -51,6 +51,7 @@
     "experience": {
       "label": "// experience",
       "title": "Experience",
+      "present": "Present",
       "freelance": {
         "title": "Freelance WordPress & AI Developer",
         "item1": "WordPress custom development, theme and plugin building for clients",
@@ -79,7 +80,7 @@
     "about": {
       "label": "// acerca de",
       "title": "Acerca de Mí",
-      "content": "Construyo aplicaciones web robustas y escalables usando WordPress, PHP, Laravel y frameworks JavaScript modernos. Con más de 15 años de experiencia full-stack, me especializo en desarrollar soluciones personalizadas de WordPress, APIs RESTful y sistemas basados en bases de datos. Me apasiona escribir código limpio y mantenible, implementar sistemas de autenticación seguros y entregar interfaces responsivas y compatibles con todos los navegadores. Creo arquitecturas backend confiables mientras aseguro experiencias frontend fluidas."
+      "content": "Hace más de 15 años que construyo aplicaciones web de punta a punta — WordPress, PHP, Laravel, JavaScript. Últimamente buena parte de eso es IA: chatbots con RAG, búsqueda vectorial sobre el contenido propio del cliente, e integrar modelos de lenguaje dentro de sitios y flujos que ya existen. Me gustan los problemas de backend (modelos de datos, APIs, autenticación) tanto como que el frontend se sienta bien, y me importa dejar código que otro pueda agarrar después."
     },
     "portfolio": {
       "label": "// portafolio",
@@ -114,6 +115,7 @@
     "experience": {
       "label": "// experiencia",
       "title": "Experiencia",
+      "present": "Presente",
       "freelance": {
         "title": "Freelance WordPress & Desarrollador IA",
         "item1": "Desarrollo WordPress a medida, creación de themes y plugins para clientes",
