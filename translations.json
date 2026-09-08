@@ -21,6 +21,10 @@
       "title": "Featured Projects",
       "livesite": "Live Site",
       "casestudy": "Case Study",
+      "lamanana": {
+        "title": "La Mañana — Digital Relaunch",
+        "description": "Rebuilt the website of La Mañana, one of Uruguay's oldest newspapers (founded 1917), on WordPress. Unified a century of archived content, restructured editorial categories with 301 redirects, redesigned the homepage, cut search time from ~4s to ~1s, and set up a git-push staging deploy pipeline for two developers."
+      },
       "clinton": {
         "title": "Clinton Foundation Digital Platform",
         "description": "As part of Radish Lab's development team, contributed to redesigning the Clinton Foundation's website. Implemented modular WordPress architecture with WCAG AA accessibility standards, custom mega menu navigation, and flexible content management system supporting multiple program areas."
@@ -75,6 +79,10 @@
       "title": "Proyectos Destacados",
       "livesite": "Ver Sitio",
       "casestudy": "Caso de Estudio",
+      "lamanana": {
+        "title": "La Mañana — Relanzamiento Digital",
+        "description": "Reconstrucción del sitio de La Mañana, uno de los diarios decanos del Uruguay (fundado en 1917), sobre WordPress. Unifiqué un siglo de archivo, reordené las categorías editoriales con redirects 301, rediseñé la portada, bajé el buscador de ~4s a ~1s y armé un pipeline de deploy a staging por git push para dos desarrolladores."
+      },
       "clinton": {
         "title": "Plataforma Digital Clinton Foundation",
         "description": "Como parte del equipo de desarrollo de Radish Lab, contribuí al rediseño del sitio web de la Fundación Clinton. Implementé arquitectura modular en WordPress con estándares de accesibilidad WCAG AA, navegación con mega menú personalizado y sistema de gestión de contenidos flexible para múltiples áreas de programa."

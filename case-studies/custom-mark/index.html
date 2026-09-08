@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="../../img/favicon.svg">
+<title>Custom Mark</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --paper: #efece3;
+    --paper-2: #e4e0d3;
+    --card: #f7f5ef;
+    --ink: #15171c;
+    --ink-soft: #464951;
+    --ink-faint: #837f72;
+    --rule: #d2cebf;
+    --spot: #1a37cf;
+    --spot-ink: #1a37cf;
+    --over: #e8531d;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --paper: #101217;
+      --paper-2: #0a0b0f;
+      --card: #191c23;
+      --ink: #f1efe6;
+      --ink-soft: #c2c4bd;
+      --ink-faint: #83857d;
+      --rule: #2b2e36;
+      --spot: #6d86ff;
+      --spot-ink: #8599ff;
+      --over: #ff7a45;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101217;
+    --paper-2: #0a0b0f;
+    --card: #191c23;
+    --ink: #f1efe6;
+    --ink-soft: #c2c4bd;
+    --ink-faint: #83857d;
+    --rule: #2b2e36;
+    --spot: #6d86ff;
+    --spot-ink: #8599ff;
+    --over: #ff7a45;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+  .prose { max-width: 660px; }
+
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    letter-spacing: .04em;
+  }
+
+  /* ticket bar */
+  .ticket {
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper);
+  }
+  .ticket .wrap {
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
+    padding-top: 11px; padding-bottom: 11px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .ticket b { color: var(--ink); font-weight: 600; }
+  .ticket .sq { color: var(--over); }
+
+  /* hero */
+  .hero { position: relative; padding: 66px 0 30px; }
+  .kicker {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+    color: var(--spot); margin: 0 0 26px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .kicker::after { content: ""; flex: 1; height: 2px; background: var(--ink); opacity: .12; }
+
+  .display {
+    font-family: "Anton", Impact, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: .92;
+    letter-spacing: .005em;
+    margin: 0;
+  }
+  h1.display {
+    font-size: clamp(3.4rem, 15vw, 8.5rem);
+    color: var(--ink);
+  }
+  h1.display .ink { color: var(--spot); }
+  h1.display .out {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ink);
+    text-stroke: 2px var(--ink);
+  }
+
+  .lede {
+    font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 34ch;
+    margin: 30px 0 0;
+  }
+
+  /* stamp */
+  .stamp {
+    position: absolute; top: 74px; right: 20px;
+    transform: rotate(-9deg);
+    border: 3px solid var(--over);
+    color: var(--over);
+    padding: 12px 16px 10px;
+    text-align: center;
+    font-family: "IBM Plex Mono", monospace;
+    box-shadow: 0 0 0 2px var(--paper), 0 0 0 5px var(--over);
+    mix-blend-mode: multiply;
+    max-width: 190px;
+  }
+  :root[data-theme="dark"] .stamp { mix-blend-mode: screen; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stamp { mix-blend-mode: screen; } }
+  .stamp .big {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 30px; line-height: .9; letter-spacing: .02em; text-transform: uppercase;
+    display: block;
+  }
+  .stamp .sm {
+    font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase;
+    margin-top: 7px; display: block;
+  }
+  .stamp .cross { display: block; font-size: 13px; margin-top: 4px; opacity: .8; }
+  @media (max-width: 720px) {
+    .stamp { position: static; display: inline-block; margin: 34px 0 0; transform: rotate(-4deg); }
+  }
+
+  /* job spec */
+  .spec {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    margin: 52px 0 0;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .spec div { padding: 18px 20px; border-right: 1px solid var(--rule); }
+  .spec div:last-child { border-right: 0; }
+  .spec dt {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--ink-faint); margin: 0 0 8px;
+  }
+  .spec dd { margin: 0; font-weight: 600; font-size: 15px; line-height: 1.35; }
+  @media (max-width: 720px) { .spec { grid-template-columns: repeat(2, 1fr); }
+    .spec div:nth-child(2) { border-right: 0; }
+    .spec div:nth-child(1), .spec div:nth-child(2) { border-bottom: 1px solid var(--rule); } }
+
+  /* body */
+  section { padding: 8px 0; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--spot); margin: 56px 0 14px;
+  }
+  h2.display {
+    font-size: clamp(2rem, 5.5vw, 3.4rem);
+    margin: 0 0 22px; color: var(--ink);
+    max-width: 16ch;
+  }
+  p { margin: 0 0 22px; }
+  .prose p { color: var(--ink); }
+  a { color: var(--spot-ink); text-underline-offset: 3px; }
+  em { font-style: italic; }
+  code, .tag {
+    font-family: "IBM Plex Mono", monospace; font-size: .82em;
+    background: var(--paper-2); color: var(--ink-soft);
+    padding: 1px 6px; border-radius: 2px; white-space: nowrap;
+  }
+
+  .pull {
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase; line-height: .98;
+    font-size: clamp(1.8rem, 6vw, 3.6rem);
+    color: var(--ink);
+    margin: 50px 0; max-width: 20ch;
+  }
+  .pull span { color: var(--over); }
+
+  /* build list */
+  .build { border-top: 2px solid var(--ink); margin: 26px 0 10px; }
+  .row {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 8px 34px;
+    padding: 24px 0; border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .row h3 {
+    font-family: "Anton", Impact, sans-serif; text-transform: uppercase;
+    font-weight: 400; font-size: 1.35rem; line-height: 1; letter-spacing: .01em;
+    margin: 0; color: var(--ink);
+  }
+  .row p { margin: 0; color: var(--ink-soft); font-size: 16.5px; line-height: 1.55; }
+  @media (max-width: 620px) { .row { grid-template-columns: 1fr; gap: 10px; } }
+
+  .signoff {
+    margin: 56px 0 0; padding-top: 26px; border-top: 2px solid var(--ink);
+    font-family: "IBM Plex Mono", monospace; font-size: 12.5px;
+    letter-spacing: .03em; color: var(--ink-faint); line-height: 1.7;
+  }
+  .signoff b { color: var(--ink); font-weight: 600; }
+  .signoff .sq { color: var(--over); }
+
+  footer.foot { border-top: 2px solid var(--ink); background: var(--paper-2); margin-top: 60px; }
+  footer.foot .wrap {
+    padding: 24px 28px 40px; display: flex; flex-wrap: wrap;
+    justify-content: space-between; gap: 12px;
+    font-family: "IBM Plex Mono", monospace; font-size: 11px;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint);
+  }
+  footer.foot a { color: var(--ink); text-decoration: none; }
+
+  @media (max-width: 620px) { body { font-size: 17px; } }
+</style>
+</head>
+<body>
+<div class="ticket">
+  <div class="wrap">
+    <span><b>JOSÉ PEDRO DÍAZ</b> <span class="sq">■</span> PORTFOLIO / CASO DE ESTUDIO</span>
+    <span>WOOCOMMERCE</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">E-commerce · Productos promocionales</div>
+    <h1 class="display">Ponerle<br><span class="ink">marca</span> a<br><span class="out">cualquier</span><br>cosa.</h1>
+    <p class="lede">Custom Mark es una tienda de productos promocionales donde cada artículo se personaliza. El desafío no era vender: era hacer que WooCommerce entendiera que un producto puede tener mil versiones.</p>
+
+    <div class="stamp">
+      <span class="big">Custom<br>Mark</span>
+      <span class="cross">+</span>
+      <span class="sm">Print · Promo · Web</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <dl class="spec">
+    <div><dt>Cliente</dt><dd>Custom Mark</dd></div>
+    <div><dt>Rol</dt><dd>Desarrollo full-stack</dd></div>
+    <div><dt>Stack</dt><dd>WordPress · WooCommerce · PHP · JS</dd></div>
+    <div><dt>Foco</dt><dd>Catálogo configurable</dd></div>
+  </dl>
+</div>
+
+<section>
+  <div class="wrap prose">
+    <p class="eyebrow">El problema</p>
+    <h2 class="display">Un producto no es un SKU, es un menú</h2>
+    <p>En los productos promocionales nada es un artículo simple. Una taza no es una taza: es un color, una técnica de impresión, un lugar donde va el logo, una cantidad que cambia el precio. Un mismo producto se abre en decenas de combinaciones, y el cliente compra la que arma él.</p>
+    <p>Una tienda estándar se queda corta enseguida. Las variaciones de WooCommerce alcanzan para "talle y color", no para el árbol de opciones real de un producto que se imprime a pedido. Ese era el nudo a desatar.</p>
+
+    <p class="pull">Cada pedido<br>es una <span>tirada</span><br>distinta.</p>
+
+    <p class="eyebrow">El enfoque</p>
+    <h2 class="display">WooCommerce, llevado más allá del carrito simple</h2>
+    <p>La decisión de fondo fue quedarse en WooCommerce en lugar de sumar una plataforma nueva, y extenderlo hasta donde el catálogo lo pedía. Trabajar sobre lo que la tienda ya conocía —productos, pedidos, panel— y agregarle encima la lógica de personalización, sin romper el flujo de compra que el cliente ya manejaba.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow" style="max-width:660px">El build</p>
+    <div class="build">
+      <div class="row">
+        <h3>Atributos y variaciones reales</h3>
+        <p>Modelé los productos con atributos personalizados que reflejan el árbol de opciones de verdad —color, técnica, ubicación del logo, cantidad— para que un solo producto contenga todas sus versiones sin duplicar fichas.</p>
+      </div>
+      <div class="row">
+        <h3>El configurador</h3>
+        <p>Una experiencia de compra donde el visitante arma su artículo paso a paso y ve cómo cada elección modifica el producto y el precio, antes de llegar al carrito.</p>
+      </div>
+      <div class="row">
+        <h3>Precios por cantidad</h3>
+        <p>Los promocionales se cotizan por volumen, no por unidad. La lógica de precios acompaña esa realidad, con el valor ajustándose según la cantidad pedida.</p>
+      </div>
+      <div class="row">
+        <h3>Panel para el cliente</h3>
+        <p>Todo pensado para que el dueño de la tienda cargue productos y opciones desde el admin de WordPress, sin tocar una línea de código para el día a día.</p>
+      </div>
+      <div class="row">
+        <h3>Vidriera responsive</h3>
+        <p>Una tienda que se lee bien en el teléfono, donde entra buena parte del tráfico, con la personalización funcionando igual de fluida en pantalla chica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap prose">
+    <p class="eyebrow">El oficio</p>
+    <h2 class="display">Que la web imprima lo que el cliente imagina</h2>
+    <p>Custom Mark vive de una idea simple y difícil de ejecutar: que cualquiera pueda ponerle su marca a un objeto y pedirlo online sin fricción. Del lado del código, eso se traduce en modelar bien la complejidad y esconderla detrás de una compra que se siente fácil.</p>
+    <p>El resultado es una tienda que trata a cada producto como lo que es: no un ítem de góndola, sino un trabajo de imprenta esperando su configuración.</p>
+
+    <p class="signoff">
+      <span class="sq">■</span> <b>José Pedro Díaz</b> — Senior Full-Stack Developer.<br>
+      WordPress · WooCommerce · PHP · Laravel.<br>
+      Caso de estudio · Portfolio.
+    </p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span><a href="/#portfolio">← Portfolio</a></span>
+    <span>Caso de estudio</span>
+    <span>Custom Mark</span>
+  </div>
+</footer>
+</body>
+</html>
