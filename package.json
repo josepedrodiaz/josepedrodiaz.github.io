@@ -9,6 +9,7 @@
     "build:jsx": "npx babel chatbot/ChatbotWidget.jsx --presets=@babel/preset-react -o chatbot/ChatbotWidget.js",
     "watch": "npx tailwindcss -i ./src/input.css -o ./styles.css --watch",
     "dev": "npx tailwindcss -i ./src/input.css -o ./styles.css --watch",
+    "detect": "npx --yes impeccable detect .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
