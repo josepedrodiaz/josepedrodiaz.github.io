@@ -11,13 +11,13 @@
 
 <style>
   :root {
-    --paper: #f3f0ea;
-    --paper-2: #eae5db;
-    --card: #fbf9f5;
-    --ink: #17130e;
-    --ink-soft: #4a423a;
-    --ink-faint: #8a7f72;
-    --rule: #d8d0c2;
+    --paper: #e8eaec;
+    --paper-2: #dadde0;
+    --card: #f4f6f7;
+    --ink: #14171a;
+    --ink-soft: #3f4347;
+    --ink-faint: #585c60;
+    --rule: #ccd1d5;
     --red: #d40808;
     --red-ink: #b00606;
   }
@@ -70,7 +70,7 @@
     display: flex; justify-content: space-between; align-items: center;
     gap: 16px; padding-top: 12px; padding-bottom: 12px;
     font-family: "IBM Plex Mono", monospace;
-    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
     color: var(--ink-faint);
   }
   .topbar strong { color: var(--ink); font-weight: 600; letter-spacing: .16em; }
@@ -89,7 +89,7 @@
     font-family: "IBM Plex Serif", Georgia, serif;
     font-weight: 700;
     font-size: clamp(2.6rem, 8vw, 4.5rem);
-    line-height: 1.02;
+    line-height: 1.3;
     letter-spacing: -0.02em;
     margin: 0 0 26px;
     text-wrap: balance;
@@ -118,12 +118,12 @@
   }
   .bridge .yr {
     font-family: "IBM Plex Serif", serif; font-weight: 700;
-    font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1;
+    font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1.3;
     letter-spacing: -0.01em;
   }
   .bridge .yr small {
     display: block; font-family: "IBM Plex Mono", monospace;
-    font-weight: 500; font-size: 10.5px; letter-spacing: .2em;
+    font-weight: 500; font-size: 12px; letter-spacing: .2em;
     text-transform: uppercase; color: var(--ink-faint); margin-top: 8px;
   }
   .bridge .span { position: relative; height: 2px; background: var(--rule); }
@@ -131,7 +131,7 @@
     content: "109 años"; position: absolute; left: 50%; top: 50%;
     transform: translate(-50%,-50%);
     background: var(--paper); padding: 0 12px;
-    font-family: "IBM Plex Mono", monospace; font-size: 11px;
+    font-family: "IBM Plex Mono", monospace; font-size: 12px;
     letter-spacing: .18em; text-transform: uppercase; color: var(--red);
     white-space: nowrap;
   }
@@ -140,13 +140,13 @@
   section.body { padding-bottom: 20px; }
   .body h2 {
     font-family: "IBM Plex Serif", serif; font-weight: 700;
-    font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.14;
+    font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.3;
     letter-spacing: -0.015em;
     margin: 58px 0 18px; text-wrap: balance;
   }
   .body .eyebrow {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase;
+    font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
     color: var(--red); margin: 0 0 -4px;
   }
   .body .eyebrow + h2 { margin-top: 12px; }
@@ -171,7 +171,7 @@
   blockquote cite {
     display: block; margin-top: 16px; font-style: normal;
     font-family: "IBM Plex Mono", monospace; font-size: 12px;
-    letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint);
+    letter-spacing: .02em; color: var(--ink-faint);
   }
 
   .metrics {
@@ -184,15 +184,15 @@
   .metrics .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px 26px; }
   .metric .num {
     font-family: "IBM Plex Serif", serif; font-weight: 700;
-    font-size: clamp(1.7rem, 5vw, 2.5rem); line-height: 1;
+    font-size: clamp(1.7rem, 5vw, 2.5rem); line-height: 1.3;
     letter-spacing: -0.02em; color: var(--ink);
     font-variant-numeric: tabular-nums;
   }
   .metric .num .arrow { color: var(--red); font-weight: 400; margin: 0 2px; }
   .metric .lbl {
     margin-top: 10px;
-    font-family: "IBM Plex Mono", monospace; font-size: 11px;
-    letter-spacing: .12em; text-transform: uppercase; line-height: 1.5;
+    font-family: "IBM Plex Mono", monospace; font-size: 12px;
+    letter-spacing: .04em; line-height: 1.5;
     color: var(--ink-faint);
   }
 
@@ -200,7 +200,7 @@
   .chapter { background: var(--card); padding: 26px 28px; }
   .chapter h3 {
     font-family: "IBM Plex Serif", serif; font-weight: 600;
-    font-size: 1.28rem; line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.01em;
+    font-size: 1.28rem; line-height: 1.3; margin: 0 0 12px; letter-spacing: -0.01em;
   }
   .chapter p { margin: 0; font-size: 17px; line-height: 1.58; color: var(--ink-soft); }
   .chapter code, .tag {
@@ -221,8 +221,8 @@
   footer.foot .wrap {
     padding: 26px 26px 40px; display: flex; flex-wrap: wrap;
     justify-content: space-between; gap: 12px;
-    font-family: "IBM Plex Mono", monospace; font-size: 11px;
-    letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint);
+    font-family: "IBM Plex Mono", monospace; font-size: 12px;
+    letter-spacing: .03em; color: var(--ink-faint);
   }
 
   @media (max-width: 620px) {
@@ -234,6 +234,7 @@
 </style>
 </head>
 <body>
+<!-- impeccable-disable tight-leading: display headings and large numerals use tight leading by design; all body copy is 1.5–1.64 -->
 <div class="topbar">
   <div class="wrap">
     <span><strong>TAMANDUA</strong> <span class="dot">/</span> CASO DE ESTUDIO</span>
@@ -243,7 +244,6 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="kicker">Prensa &amp; Web</div>
     <h1>Poner un siglo de periodismo <em>en pantalla</em></h1>
     <p class="standfirst">Cómo reconstruimos el sitio de La Mañana, uno de los diarios decanos del Uruguay, sin traicionar los más de cien años que carga su nombre.</p>
     <div class="byline">
