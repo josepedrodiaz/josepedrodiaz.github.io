@@ -9,14 +9,14 @@
     "hero": {
       "subtitle": "Crafting Digital Experiences",
       "title": "Hello, I'm Pedro Díaz",
-      "subtitle-tech": "Senior Full-Stack Developer | RAG & Vector Search • AI Chatbots • WordPress • PHP • Laravel",
+      "subtitle-tech": "Senior Full-Stack Developer | Laravel • TypeScript • SvelteKit • AI Integrations & Vector Search",
       "available": "Available for work!",
       "location": "Currently based in La Plata - Buenos Aires - Argentina"
     },
     "about": {
       "label": "// about",
       "title": "About Me",
-      "content": "I've spent 15+ years building web apps end to end — WordPress, PHP, Laravel, JavaScript. These days a good part of that work is AI: retrieval-augmented chatbots, vector search over a client's own content, and wiring language models into sites and workflows that already exist. I like the backend problems (data models, APIs, authentication) as much as getting the frontend to feel right, and I care about leaving code that someone else can actually pick up later."
+      "content": "I've spent 15+ years building web apps end to end. These days my own products run on TypeScript, SvelteKit and Supabase, and Laravel and PHP are still my go-to when the backend calls for them. A good part of the work is AI: chatbots grounded in a client's own content, vector search, vision models, and wiring language models into systems that already exist. I like the backend problems (data models, APIs, auth, payments) as much as getting the frontend to feel right, and I care about leaving code someone else can pick up later."
     },
     "portfolio": {
       "label": "// portfolio",
@@ -53,9 +53,9 @@
       "title": "Experience",
       "present": "Present",
       "freelance": {
-        "title": "Freelance WordPress & AI Developer",
-        "item1": "WordPress custom development, theme and plugin building for clients",
-        "item2": "AI integration with Google Gemini API, serverless architectures on Vercel"
+        "title": "Freelance Full-Stack Developer · AI Integrations",
+        "item1": "AI integrations (OpenAI, Claude, Gemini) and serverless architectures on Vercel",
+        "item2": "WordPress custom development, theme and plugin building for clients"
       }
     },
     "contact": {
@@ -73,14 +73,14 @@
     "hero": {
       "subtitle": "Creando Experiencias Digitales",
       "title": "Hola, soy Pedro Díaz",
-      "subtitle-tech": "Desarrollador Full-Stack Senior | RAG y Búsqueda Vectorial • Chatbots con IA • WordPress • PHP • Laravel",
+      "subtitle-tech": "Desarrollador Full-Stack Senior | Laravel • TypeScript • SvelteKit • Integraciones de IA y Búsqueda Vectorial",
       "available": "¡Disponible para trabajar!",
       "location": "Actualmente en La Plata - Buenos Aires - Argentina"
     },
     "about": {
       "label": "// acerca de",
       "title": "Acerca de Mí",
-      "content": "Hace más de 15 años que construyo aplicaciones web de punta a punta — WordPress, PHP, Laravel, JavaScript. Últimamente buena parte de eso es IA: chatbots con RAG, búsqueda vectorial sobre el contenido propio del cliente, e integrar modelos de lenguaje dentro de sitios y flujos que ya existen. Me gustan los problemas de backend (modelos de datos, APIs, autenticación) tanto como que el frontend se sienta bien, y me importa dejar código que otro pueda tomar después."
+      "content": "Hace más de 15 años que construyo aplicaciones web de punta a punta. Hoy mis propios productos corren sobre TypeScript, SvelteKit y Supabase, y Laravel y PHP siguen siendo lo que uso cuando el backend lo pide. Buena parte del trabajo es IA: chatbots que responden con el contenido del propio cliente, búsqueda vectorial, modelos de visión e integrar modelos de lenguaje en sistemas que ya existen. Me gustan los problemas de backend (modelos de datos, APIs, autenticación, pagos) tanto como que el frontend se sienta bien, y me importa dejar código que otro pueda tomar después."
     },
     "portfolio": {
       "label": "// portafolio",
@@ -117,9 +117,9 @@
       "title": "Experiencia",
       "present": "Presente",
       "freelance": {
-        "title": "Freelance WordPress & Desarrollador IA",
-        "item1": "Desarrollo WordPress a medida, creación de themes y plugins para clientes",
-        "item2": "Integración de IA con Google Gemini API, arquitecturas serverless en Vercel"
+        "title": "Freelance Full-Stack Developer · Integraciones de IA",
+        "item1": "Integraciones de IA (OpenAI, Claude, Gemini) y arquitecturas serverless en Vercel",
+        "item2": "Desarrollo WordPress a medida, creación de themes y plugins para clientes"
       }
     },
     "contact": {

@@ -5,7 +5,7 @@ Personal portfolio website of Pedro Díaz, Senior Full-Stack Developer.
 Pedro Díaz – Senior Full-Stack Developer.
 
 # Expertise
-WordPress development, PHP, REST APIs, custom plugins, web architecture, database-driven systems.
+Laravel, PHP, TypeScript, SvelteKit, AI integrations (chatbots, vector search), payments, REST APIs, web architecture, database-driven systems. Also WordPress and WooCommerce.
 
 # Content
 Portfolio projects, technical writing, professional background, and experience in full-stack web development.
