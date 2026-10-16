@@ -110,6 +110,9 @@ class I18n {
 
         // Set initial state
         switcher.checked = this.currentLang === 'es';
+        // Setting .checked doesn't fire 'change', so the chatbot and the mobile
+        // switch never hear about it. Announce it before our own listener exists.
+        switcher.dispatchEvent(new Event('change'));
 
         // Add event listener
         switcher.addEventListener('change', (e) => {
